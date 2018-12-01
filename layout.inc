@@ -10,7 +10,7 @@ class Layout
 {
 	private $title="Travel"; // 웹 페이지 제목
 
-	private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants');
+	private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants'); //상단에 있는 메뉴
 
 	public $link; // CSS 링크 태그
 
@@ -26,7 +26,6 @@ class Layout
 	// 레이아웃을 출력
 
 	public function LayoutMain()
-
 	{
 		echo "<!DOCTYPE html>\n<html lang='ko'>";
 
@@ -70,26 +69,26 @@ class Layout
 		echo
 		"<header>
 
-			<div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' id='logoimg' width='270px' height='80px' /></a></div>
+			<div id='logo'><a href = '/'><img src='./images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' id='logoimg' width='270px' height='80px' /></a></div>
 
 			<div id='navset'>
 			<nav id='menu'>
 		";
 
-				$this->LayoutMenu($this->menu); // $menu 배열을 이용해서 메뉴 부분을 호출
-				echo
+
+			echo
 			"</nav>
 
-				<nav id='login'>".$this->login."</nav>
-				<nav id='mypage'>".$this->mypage."</nav>
+			<nav id='login'>".$this->login."</nav>
+			<nav id='mypage'>".$this->mypage."</nav>
 
 			</div>
 
-			<div class='ad_1'>
+			<div class='menubar'>";
 
-				// hello
+				$this->LayoutMenu($this->menu); // $menu 배열을 이용해서 메뉴 부분을 호출
 
-			</div>
+			"</div>
 		</header>";
 
 	}
@@ -118,13 +117,13 @@ class Layout
 
 		{
 
-			$thismenu = "<li><a href='./cate.php?cate_id=".$value."'>".$value."</a></li>";
+			$thismenu = "<a href='./cate.php?cate_id=".$value."'>".$key."</a>";
 
 		} else
 
 		{
 
-			$thismenu = "<li><b style='border-bottom:4px solid #ff9090;'>".$value."</b></li>";
+			$thismenu = "<b style='border-bottom:4px solid #ff9090;'>".$key."</b>";
 
 		}
 
@@ -146,16 +145,16 @@ class Layout
 
 			{
 
-				$this->login="<a href='/registi.php'>회원가입</a><b style='border-bottom:3px solid #90bbff;'>로그인</b>";
+				$this->login="<a href='./registi.php'>회원가입</a><b style='border-bottom:3px solid #90bbff;'>로그인</b>";
 
 			} else
 
 			{
 				if(strpos($_SERVER['PHP_SELF'], "registi.php")){
-					$this->login="<b style='border-bottom:3px solid #90bbff;'>회원가입</b><a href='/login.php'>로그인</a>";
+					$this->login="<b style='border-bottom:3px solid #90bbff';>회원가입</b><a href='./login.php'>로그인</a>";
 				}
 				else{
-					$this->login="<a href='/registi.php'>회원가입</a><a href='/login.php'>로그인</a>";
+					$this->login="<a href='./registi.php'>회원가입</a><a href='./login.php'>로그인</a>";
 				}
 			}
 
@@ -177,16 +176,7 @@ class Layout
 		}
 		else
 		{
-			if($_SESSION['regist_type']=="customer"){
-				$this->mypage="<a href='/customer'>마이페이지</a>";
-			}
-			else if($_SESSION['regist_type']=="designer"){
-				$this->mypage="<a href='/designer'>마이페이지</a>";
-			}
-			else if($_SESSION['regist_type']=="admin"){
-				$this->mypage="<a href='/admin'>마이페이지</a>";
-			}
-
+			$this->mypage="<a href='./".$_SESSION['regist_type'].".php'>마이페이지</a>";
 		}
 
 	}
@@ -201,6 +191,7 @@ class Layout
 		echo "<section><article>".$this->content."</article>";
 
 	}
+
 
 }
 

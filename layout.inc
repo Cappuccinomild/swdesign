@@ -1,25 +1,16 @@
-'<?php
+<?php
 
 // 세션을 시작합니다.
-
-// 이후에 사용 할 로그인 용.
-
+// 로그인용
 session_start();
 
-
-
 // class를 이용한 객체 지향 방식
-
 class Layout
 
 {
-	private $title="Need Programs"; // 웹 페이지 제목
+	private $title="Travel"; // 웹 페이지 제목
 
-	private $menu = array('Board'=>'board', 'Programs'=>'programs', 'Notice'=>'notice'); //상단에 있는 메뉴
-
-	private $pmenu = array('전체'=>'?tn=all', '압축'=>'?tn=press');
-
-	private $bmenu = array('전체'=>'?tn=all', '자유게시판'=>'?tn=press');
+	private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants');
 
 	public $link; // CSS 링크 태그
 
@@ -27,11 +18,9 @@ class Layout
 
 	public $content; // 메인 컨텐츠
 
-	public $board; //게시판 이름 지정
-
 	public $sub; // 서브 메뉴용 변수
 
-  	private $login; // 로그인이나 로그아웃을 출력
+  private $login; // 로그인이나 로그아웃을 출력
 
 	private $mypage; //마이페이지용 변수
 
@@ -41,8 +30,6 @@ class Layout
 	public function LayoutMain()
 
 	{
-		echo $this->ThisBoard(); // 현재 게시판의 이름을 확인
-
 		echo "<!DOCTYPE html>\n<html lang='ko'>";
 
 		echo "<head>\n<meta charset='utf-8'/>";
@@ -57,23 +44,9 @@ class Layout
 
 		echo	$this->LayoutContent(); // 컨텐츠 부분을 레이아웃에 추가
 
-		echo	$this->LayoutSide(); // 사이드 부분을 레이아웃에 추가
-
 		echo	$this->LayoutFooter(); // 푸터 부분을 레이아웃에 추가
 
 		echo "</div></body>\n</html>";
-
-	}
-
-
-
-	// 현재 게시판의 이름을 확인
-
-	public function ThisBoard()
-
-	{
-
-		$this->board = explode('/', $_SERVER['PHP_SELF']);
 
 	}
 
@@ -107,7 +80,7 @@ class Layout
 			<nav id='menu'>
 		";
 
-				$this->LayoutMenu($this->menu, 0); // $menu 배열을 이용해서 메뉴 부분을 호출
+				$this->LayoutMenu($this->menu); // $menu 배열을 이용해서 메뉴 부분을 호출
 				echo
 			"</nav>
 
@@ -125,7 +98,7 @@ class Layout
 
 	}
 
-	public function LayoutMenu($menu, $side) // 배열과 <li> 을 이용해서 메뉴 부분을 호출
+	public function LayoutMenu($menu) // 배열과 <li> 을 이용해서 메뉴 부분을 호출
 
 	{
 
@@ -133,53 +106,29 @@ class Layout
 
 		{
 
-			$this->ThisMenu($key, $value, $side);
+			$this->ThisMenu($key, $value);
 
-        	}
+  	}
 
 	}
 
 
 
-	public function ThisMenu($key, $value ,$side) //받아온 값으로 메뉴를 출력함
+	public function ThisMenu($key, $value) //받아온 값으로 메뉴를 출력함
 
 	{
 
-		if($side=='1')
+		if(strpos($_SERVER['REQUEST_URI'], $value)==false)
 
 		{
 
-			if(strpos($_SERVER['REQUEST_URI'], $value)==false)
+			$thismenu = "<li><a href='./cate.php?cate_id=".$value."'>".$value."</a></li>";
 
-			{
+		} else
 
-				$thismenu = "<li><a href='./cate.php?cate_id=".$value."'>".$value."</a></li>";
-
-			} else
-
-			{
-
-				$thismenu = "<li><b style='border-bottom:4px solid #ff9090;'>".$value."</b></li>";
-
-			}
-
-		}
-		else
 		{
 
-			if(strpos($_SERVER['PHP_SELF'], $value)==false)
-
-			{
-
-				$thismenu = "<li><a href='./cate.php?cate_id=".$value."'>".$value."</a></li>";
-
-			} else
-
-			{
-
-				$thismenu = "<li><b style='border-bottom:4px solid #545454;'>".$value."</b></li>";
-
-			}
+			$thismenu = "<li><b style='border-bottom:4px solid #ff9090;'>".$value."</b></li>";
 
 		}
 
@@ -254,61 +203,6 @@ class Layout
 	{
 
 		echo "<section><article>".$this->content."</article>";
-
-	}
-
-	// 사이드바 추가
-
-	// 사이드바 추가
-
-	public function SideMenu()
-
-	{
-
-		$this->board=explode('/', $_SERVER['PHP_SELF']);
-
-		switch($this->board[1])
-
-		{
-
-			case 'notice' :
-
-				echo "<h3 style='margin: 5px 0 10px 0;text-align:center;'><a href='".$_SERVER['PHP_SELF']."'>공지사항</a></h3>";
-
-				break;
-
-			case 'programs' :
-
-				echo "<h3 style='margin: 5px 0 10px 0;text-align:center;'><a href='".$_SERVER['PHP_SELF']."'>프로그램</a></h3>";
-
-				$this->LayoutMenu($this->pmenu, 1);
-
-				break;
-
-			case 'board' :
-
-				echo "<h3 style='margin: 5px 0 10px 0;text-align:center;'><a href='".$_SERVER['PHP_SELF']."'>게시판</a></h3>";
-
-				$this->LayoutMenu($this->bmenu, 1);
-
-				break;
-
-
-		}
-
-	}
-
-
-
-	public function LayoutSide()
-
-	{
-
-		echo "<aside>";
-
-		$this->SideMenu();
-
-		echo "</aside></section>";
 
 	}
 

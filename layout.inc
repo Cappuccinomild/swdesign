@@ -153,13 +153,13 @@ class Layout
 
 			{
 
-				$thismenu = "<li><a href='./".$value."'>".$key."</a></li>";
+				$thismenu = "<li><a href='./cate.php?cate_id=".$value."'>".$value."</a></li>";
 
 			} else
 
 			{
 
-				$thismenu = "<li><b style='border-bottom:4px solid #ff9090;'>".$key."</b></li>";
+				$thismenu = "<li><b style='border-bottom:4px solid #ff9090;'>".$value."</b></li>";
 
 			}
 
@@ -171,13 +171,13 @@ class Layout
 
 			{
 
-				$thismenu = "<li><a href='/".$value."'>".$key."</a></li>";
+				$thismenu = "<li><a href='./cate.php?cate_id=".$value."'>".$value."</a></li>";
 
 			} else
 
 			{
 
-				$thismenu = "<li><b style='border-bottom:4px solid #545454;'>".$key."</b></li>";
+				$thismenu = "<li><b style='border-bottom:4px solid #545454;'>".$value."</b></li>";
 
 			}
 

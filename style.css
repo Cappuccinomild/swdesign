@@ -1,0 +1,147 @@
+/* body all */
+body {
+	margin:0;
+	color:#6E6E7F; 
+	background:#ffffff;
+}
+
+a:link, a:visited {
+	color:#545454; 
+	text-decoration:none; 
+	font-weight:bolder; 
+}
+
+a:hover {
+	color:#B1B1CC;
+}
+
+/* container start */
+
+div #container {
+	margin:0 auto;
+}
+
+/* header start */
+
+header {
+	width:94%; 
+	background:#fff;
+	margin:1% 2% 0 2%; 
+	padding:1%; 
+	border-radius:10px;
+}
+
+header h1 {
+	margin:0; 
+	padding:5px;
+}
+
+header h1 > a:link,
+header h1 > a:visited {
+	color:#545454; 
+}
+
+header h1 > a:hover {
+	color:#000;
+}
+
+.text-field {
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: 휴먼모음T;
+  color: #6e6e7f;
+}
+
+.navbar #menubar {
+  float: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar #menubar li {
+  float: left;
+  margin-left: 50px;
+  line-height: 75px;
+}
+
+.navbar #menubar li a {
+  color: #545454;
+  font-size: 13px;
+  text-decoration: none;
+}
+#submit-btn {
+	font-size: 20px;
+	font-family: 휴먼모음T;
+ 	background-color: #000000;
+	color: white;
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px;
+	border: none;
+}
+
+#submit-btn:hover {
+	cursor:pointer;
+}
+div #logo {
+	width: 260px;
+	padding: 5px;
+	margin-left: auto;
+ 	margin-right: auto;
+ 	vertical-align: middle;
+}
+
+div #navset {
+	float:right;
+	top:-155px;
+}
+
+nav #menu {
+	padding: 0;
+  	margin: 0;
+  	list-style: none;
+  	font-size: 16px;
+}
+
+
+nav #menu > li {
+	float: left;
+ 	margin: 0 17px;
+ }
+
+
+nav #login {
+	clear:both; 
+	padding-top:5px; 
+	text-align:right; 
+	width:300px;
+}
+
+nav #login > a {float:right; list-style:none; margin-left:10px}
+nav #login > b {float:right; list-style:none; margin-left:10px}
+
+nav #mypage > a {float:right; list-style:none; margin-left:10px}
+nav #mypage > b {float:right; list-style:none; margin-left:10px}
+
+div.ad_1 {
+	clear:both; 
+	background:#fff; 
+	text-align:center; 
+	padding:10px 0 5px 0; 
+	background:#e9eaed; 
+	border-radius:10px;
+}
+
+/* header end */
+
+/* container end */
+
+td {padding:5px;}
+th{padding:5px;}
+
+form {margin:0px;}

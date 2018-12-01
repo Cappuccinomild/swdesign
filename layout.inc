@@ -18,8 +18,6 @@ class Layout
 
 	public $content; // 메인 컨텐츠
 
-	public $sub; // 서브 메뉴용 변수
-
   private $login; // 로그인이나 로그아웃을 출력
 
 	private $mypage; //마이페이지용 변수
@@ -43,8 +41,6 @@ class Layout
 		echo	$this->LayoutHeader(); // 헤더 부분을 레이아웃에 추가
 
 		echo	$this->LayoutContent(); // 컨텐츠 부분을 레이아웃에 추가
-
-		echo	$this->LayoutFooter(); // 푸터 부분을 레이아웃에 추가
 
 		echo "</div></body>\n</html>";
 
@@ -203,15 +199,6 @@ class Layout
 	{
 
 		echo "<section><article>".$this->content."</article>";
-
-	}
-
-	// 푸터 부분 추가
-
-	public function LayoutFooter()
-	{
-
-		echo "<footer>Copyright © Kurien. All rights reserved. Need Programs</footer>";
 
 	}
 

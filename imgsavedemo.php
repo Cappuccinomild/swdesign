@@ -30,10 +30,10 @@
   please try again later.</p>";
   exit;
   }
-
+  $link = 0;
   $query = "INSERT INTO feedback VALUES(?, ?, ?, ?, ?, ?)";
   $stmt = $db->prepare($query);
-  $stmt->bind_param('ssisss', $CustomerID, $DesignerID, $GoodsID, $title, $body, $imglink);
+  $stmt->bind_param('ssissi', $CustomerID, $DesignerID, $GoodsID, $title, $body, $link);
   $stmt->execute();
 
   // 설정

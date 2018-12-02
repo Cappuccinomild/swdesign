@@ -1,14 +1,18 @@
-+/* body all */
+/* body all */
+* {
+  box-sizing: border-box;
+}
+
 body {
 	margin:0;
-	color:#6E6E7F;
+	color:#6E6E7F; 
 	background:#ffffff;
 }
 
 a:link, a:visited {
-	color:#545454;
-	text-decoration:none;
-	font-weight:bolder;
+	text-decoration:none; 
+	font-weight:bolder; 
+	color: #000000;
 }
 
 a:hover {
@@ -19,30 +23,6 @@ a:hover {
 
 div #container {
 	margin:0 auto;
-}
-
-/* header start */
-
-header {
-	width:94%;
-	background:#fff;
-	margin:1% 2% 0 2%;
-	padding:1%;
-	border-radius:10px;
-}
-
-header h1 {
-	margin:0;
-	padding:5px;
-}
-
-header h1 > a:link,
-header h1 > a:visited {
-	color:#545454;
-}
-
-header h1 > a:hover {
-	color:#000;
 }
 
 .text-field {
@@ -65,24 +45,6 @@ header h1 > a:hover {
   margin-bottom: 10px;
   font-family: 휴먼모음T;
   color: #6e6e7f;
-}
-.navbar #menubar {
-  float: right;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar #menubar li {
-  float: left;
-  margin-left: 50px;
-  line-height: 75px;
-}
-
-.navbar #menubar li a {
-  color: #545454;
-  font-size: 13px;
-  text-decoration: none;
 }
 
 #submit-btn {
@@ -114,52 +76,51 @@ header h1 > a:hover {
 #login-btn:hover {
 	cursor:pointer;
 }
-div #logo {
-	width: 260px;
-	padding: 5px;
+
+#topbar {
+    background-color: white;
+    height: 100px;
+    padding: 0 30px;
+    overflow: hidden;
+}
+
+#topbar :hover {
+	color:#B1B1CC;
+}
+
+#topbar ul li {
+    display: inline-block;
+    float: right;
+    line-height:60px;
+}
+
+#topbar ul li a {
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+#logo {
 	margin-left: auto;
- 	margin-right: auto;
- 	vertical-align: middle;
+	margin-right: auto;
+	margin-bottom: 100px;
+	text-align: center;
 }
 
-div #navset {
-	float:right;
-	top:-155px;
+#menubar {
+	font-family: 돋움;
+	margin-top: 10px;
+	color: #000000;
+	text-align: center;
 }
-
-nav #menu {
-	padding: 0;
-  	margin: 0;
-  	list-style: none;
-  	font-size: 16px;
-}
-
-
-nav #menu > li {
-	float: left;
- 	margin: 0 17px;
- }
-
-
-nav #login {
-	clear:both;
-	padding-top:5px;
-	text-align:right;
-	width:300px;
-}
-
-nav #login > a {float:right; list-style:none; margin-left:10px}
-nav #login > b {float:right; list-style:none; margin-left:10px}
-
-nav #mypage > a {float:right; list-style:none; margin-left:10px}
-nav #mypage > b {float:right; list-style:none; margin-left:10px}
 
 div.ad_1 {
 	clear:both; 
-	background:#fff;
-	text-align:center;
-	padding:10px 0 5px 0;
-	background:#e9eaed;
+	background:#fff; 
+	text-align:center; 
+	padding:10px 0 5px 0; 
+	background:#e9eaed; 
 	border-radius:10px;
 }
 

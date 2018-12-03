@@ -32,32 +32,38 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
 
 <fieldset>
 
-	<p><label for='Title'>Item</label>
+	<p><label for='Item'>Item</label>
 	<input type='text' id='Item' name='Item'
 	maxlength='40' size='7' /></p>
 
-	<p><label for='Title'>Category</label>
-	<input type='text' id='Category' name='Category'
-	maxlength='40' size='7' /></p>
+	<p><label for='Category'>Category</label>
+	<input list='cate' id='Category' name='Category'
+	maxlength='40' size='7' autocomplete='off'/></p>
 
-	<p><label for='Title'>price</label>
+	<datalist id='cate'>
+  <option value='outer'>
+  <option value='top'>
+  <option value='pants'>
+	</datalist>
+
+	<p><label for='price'>price</label>
 	<input type='text' id='price' name='price'
 	maxlength='40' size='7' /></p>
 
-	<p><label for='Title'>color</label>
-	<input type='text' id='color' name='color'
+	<p><label for='color'>color</label>
+	<input type='color' multiple = 'multiple' id='color' name='color'
 	maxlength='40' size='7' /></p>
 
-	<p><label for='Title'>size</label>
+	<p><label for='size'>size</label>
 	<input type='text' id='size' name='size'
 	maxlength='40' size='7' /></p>
 
-	<p><label for='Title'>material</label>
+	<p><label for='material'>material</label>
 	<input type='text' id='material' name='material'
 	maxlength='40' size='7' /></p>
 
 	<p><label for='img'>img</label>
-	<input type='file' name='img' id='img'/></p>
+	<input type='file' multiple='multiple' name='img' id='img'/></p>
 
 </fieldset>
 

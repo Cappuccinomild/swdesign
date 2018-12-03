@@ -66,7 +66,7 @@ if($pass1 == $pass2)
 
 
 $db->query = "insert into member values
-('".$id."', password('".$pass."'), '".$mail."', '".$date."', 1,'".$regist_type."', '".$name."', '".$phone."', '".$address."')";
+('".$id."', password('".$pass."'), '".$mail."', '".$date."', 1,'".$regist_type."', '".$address."', '".$phone."', '".$name."')";
 
 $db->DBQ();
 

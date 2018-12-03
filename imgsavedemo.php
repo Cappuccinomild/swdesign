@@ -4,22 +4,28 @@
   <h1>book o rama book entry result</h1>
   <?php
 
-  if(!isset($_POST['CustomerID']) || !isset($_POST['DesignerID'])
-   ||!isset($_POST['GoodsID']) || !isset($_POST['Title'])
-    || !isset($_POST['body']) ||isset($_POST['img']) ) {
+  if( !isset($_POST['price']) || !isset($_POST['Category'])
+    ||!isset($_POST['Item'])  ||isset($_POST['color'])
+    ||isset($_POST['size'])    ||isset($_POST['material'])
+    ||isset($_POST['img']) ){
   echo "<p>you have not entered all the required details.<br />
   Please go back and try again.</p>";
      exit;
    }
+  $DesignerID = $_SESSION['id'];
+  $Item=$_POST['Item'];
+  $CategoryID=$_POST['Category'];
+  $price=$_POST['price'];
+  $color=$_POST['color'];
+  $size=$_POST['size'];
+  $material=$_POST['material'];
 
-  $CustomerID=$_POST['CustomerID'];
-  $CustomerID=$CustomerID;
-  $DesignerID=$_POST['DesignerID'];
-  $DesignerID=$DesignerID;
-  $GoodsID=$_POST['GoodsID'];
-  $GoodsID=intval($GoodsID);
-  $title=$_POST['Title'];
-  $body=$_POST['body'];
+  //get goodsID
+  $GoodsID = 0;
+
+
+
+
 
   $imglink = $_SERVER['DOCUMENT_ROOT'].'/images/'.$GoodsID;
 
@@ -31,9 +37,9 @@
   exit;
   }
   $link = 0;
-  $query = "INSERT INTO feedback VALUES(?, ?, ?, ?, ?, ?)";
+  $query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?)";
   $stmt = $db->prepare($query);
-  $stmt->bind_param('ssissi', $CustomerID, $DesignerID, $GoodsID, $title, $body, $link);
+  $stmt->bind_param('isssssss', $Goodsid, $CategoryID, $Item, $price, $color, $size, $material, $DesignerID);
   $stmt->execute();
 
   // 설정

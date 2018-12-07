@@ -5,7 +5,7 @@ session_start();
 // class를 이용한 객체 지향 방식
 class Layout
 {
-	private $title="Travel"; // 웹 페이지 제목
+	private $title="일사천리"; // 웹 페이지 제목
 	private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants'); //상단에 있는 메뉴
 	public $link; // CSS 링크 태그
 	public $style; // 스타일 적용
@@ -17,7 +17,7 @@ class Layout
 	public function LayoutMain()
 	{
 		echo "<!DOCTYPE html>\n<html lang='ko'>";
-		echo "<head>\n<meta charset='utf-8'/>";
+		echo "<head>\n<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>\n<meta charset='utf-8'/>";
 		echo "<title>".$this->title."</title>";
 		echo $this->LayoutStyle(); // 스타일을 레이아웃에 추가.
 		echo "</head>\n<body>\n<div id='container'>";
@@ -47,20 +47,20 @@ class Layout
 
 		<div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002'/></a></div>
 
-		<nav id='menubar'>";
+		<nav id='menubar'>
+			<hr />";
 			$this->LayoutMenu($this->menu); // $menu 배열을 이용해서 메뉴 부분을 호출
-		"</nav>";
+		"<hr />
+		</nav>";
 	}
 	public function LayoutMenu($menu) // 배열과 <li> 을 이용해서 메뉴 부분을 호출
 	{
-		echo
-		"<ul>";
 		while (list($key, $value) = each($menu))
 		{
 			$this->ThisMenu($key, $value);
   		}
-  		"</ul>";
 	}
+
 	public function ThisMenu($key, $value) //받아온 값으로 메뉴를 출력함
 	{
 		if(strpos($_SERVER['REQUEST_URI'], $value)==false)
@@ -79,11 +79,11 @@ class Layout
 		{
 			if(strpos($_SERVER['PHP_SELF'], "login.php"))
 			{
-				$this->login="<a href='./registi.php'>회원가입</a>로그인";
+				$this->login="<a href='./registi.php'>회원가입</a><a href='./login.php'><b style='color:#b3b2b2;'>로그인</a>";
 			} else
 			{
 				if(strpos($_SERVER['PHP_SELF'], "registi.php")){
-					$this->login="회원가입<a href='./login.php'>로그인</a>";
+					$this->login="<a href='./registi.php'><b style='color:#b3b2b2;'>회원가입</a><a href='./login.php'>로그인</a>";
 				}
 				else{
 					$this->login="<a href='./registi.php'>회원가입</a><a href='./login.php'>로그인</a>";
@@ -91,7 +91,7 @@ class Layout
 			}
 		} else
 		{
-			$this->login="<a href='./logout.php'>Logout</a>";
+			$this->login="<a href='./logout.php'>로그아웃</a>";
 		}
 	}
 	public function LayoutMypage(){

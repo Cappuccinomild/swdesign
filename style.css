@@ -9,6 +9,10 @@ body {
 	background:#ffffff;
 }
 
+a {
+	font-size:13px;
+	font-family: "Roboto";
+}
 a:link, a:visited {
 	text-decoration:none; 
 	font-weight:bolder; 
@@ -28,23 +32,30 @@ div #container {
 .text-field {
   font-size: 20px;
   width: 100%;
-  border: none;
-  border-radius: 5px;
+  
   padding: 10px;
+  margin-bottom: 10px;
+  font-family: 휴먼모음T;
+  color: #000000;
+}
+
+.designer-text-field {
+  font-size: 20px;
+  width: 100%;
   margin-bottom: 10px;
   font-family: 휴먼모음T;
   color: #6e6e7f;
 }
 
 .sub-text {
-	font-size:16px;
 	width: 100%;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-family: 휴먼모음T;
-  color: #6e6e7f;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
+
+	font-size: 15px;
+	color: #6e6e7f;
 }
 
 #submit-btn {
@@ -82,6 +93,7 @@ div #container {
     height: 100px;
     padding: 0 30px;
     overflow: hidden;
+ 	font-family: "휴먼모음T";   
 }
 
 #topbar :hover {
@@ -96,9 +108,9 @@ div #container {
 
 #topbar ul li a {
     color: black;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 #logo {
@@ -109,7 +121,7 @@ div #container {
 }
 
 #menubar {
-	font-family: 돋움;
+	font-family: "Roboto";
 	margin-top: 10px;
 	color: #000000;
 	text-align: center;

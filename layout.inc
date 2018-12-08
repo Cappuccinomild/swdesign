@@ -6,7 +6,7 @@ session_start();
 class Layout
 {
 	private $title="일사천리"; // 웹 페이지 제목
-	private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants'); //상단에 있는 메뉴
+//	private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants'); //상단에 있는 메뉴
 	public $link; // CSS 링크 태그
 	public $style; // 스타일 적용
 	public $content; // 메인 컨텐츠
@@ -49,28 +49,15 @@ class Layout
 
 		<nav id='menubar'>
 			<hr />";
-			$this->LayoutMenu($this->menu); // $menu 배열을 이용해서 메뉴 부분을 호출
+			$this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출
 		"<hr />
 		</nav>";
 	}
-	public function LayoutMenu($menu) // 배열과 <li> 을 이용해서 메뉴 부분을 호출
+	public function LayoutMenu() // 배열과 <li> 을 이용해서 메뉴 부분을 호출
 	{
-		while (list($key, $value) = each($menu))
-		{
-			$this->ThisMenu($key, $value);
-  		}
-	}
-
-	public function ThisMenu($key, $value) //받아온 값으로 메뉴를 출력함
-	{
-		if(strpos($_SERVER['REQUEST_URI'], $value)==false)
-		{
-			$thismenu = "<a href='./cate.php?cate_id=".$value."'>".$key."</a>";
-		} else
-		{
-			$thismenu = "<b style='border-bottom:4px solid #ff9090;'>".$key."</b>";
-		}
-		echo $thismenu;
+		echo "<li><a href='./cate.php?cate_id=outer'>Outer</a></li>";
+		echo "<li><a href='./cate.php?cate_id=top'>Top</a></li>";
+		echo "<li><a href='./cate.php?cate_id=pants'>Pants</a></li>";
 	}
 	// 로그인을 출력할 지 로그아웃을 출력할 지 결정
 	public  function LayoutLogin()

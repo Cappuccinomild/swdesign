@@ -4,35 +4,36 @@
 }
 
 body {
-	margin:0;
-	color:#6E6E7F; 
-	background:#ffffff;
+   margin:0;
+   color:#6E6E7F;
+   background:#ffffff;
 }
 
 a {
-	font-size:13px;
-	font-family: "Roboto";
+   font-size:16px;
+   font-family: "Roboto";
 }
+
 a:link, a:visited {
-	text-decoration:none; 
-	font-weight:bolder; 
-	color: #000000;
+   text-decoration:none;
+   font-weight:bolder;
+   color: #000000;
 }
 
 a:hover {
-	color:#B1B1CC;
+   color:#B1B1CC;
 }
 
 /* container start */
 
 div #container {
-	margin:0 auto;
+   margin:0 auto;
 }
 
 .text-field {
   font-size: 20px;
   width: 100%;
-  
+
   padding: 10px;
   margin-bottom: 10px;
   font-family: 휴먼모음T;
@@ -48,44 +49,63 @@ div #container {
 }
 
 .sub-text {
-	width: 100%;
-	border: none;
-	border-radius: 5px;
-	padding: 10px;
-	margin-bottom: 10px;
+   width: 100%;
+   border: none;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 10px;
+   font-size: 15px;
+   color: #6e6e7f;
+}
 
-	font-size: 15px;
-	color: #6e6e7f;
+.category-list {
+   list-style-type : none;
+   display: inline-block;
+}
+
+.category-link {
+   display: block;
+   padding: 8px 20px;
+   text-transform: uppercase;
+   text-decoration: none;
+   font-weight: bold;
+   color: #333;
+   font-size: 20px;
+}
+
+.category-link:hover {
+   color: #fff;
+   background: #111;
 }
 
 #submit-btn {
-	font-size: 20px;
-	font-family: 휴먼모음T;
- 	background-color: #000000;
-	color: white;
-	width: 100%;
-	border-radius: 5px;
-	padding: 10px;
-	border: none;
+   font-size: 20px;
+   font-family: 휴먼모음T;
+    background-color: #000000;
+   color: white;
+   width: 100%;
+   border-radius: 5px;
+   padding: 10px;
+   border: none;
 }
 
 #login-btn {
-	font-size: 20px;
-	font-family: 휴먼모음T;
- 	background-color: #000000;
-	color: white;
-	width: 100%;
-	border-radius: 5px;
-	padding: 10px;
-	border: none;
+   font-size: 20px;
+   font-family: 휴먼모음T;
+    background-color: #000000;
+   color: white;
+   width: 100%;
+   border-radius: 5px;
+   padding: 10px;
+   border: none;
 }
 
 #submit-btn:hover {
-	cursor:pointer;
+   cursor:pointer;
 }
 
 #login-btn:hover {
-	cursor:pointer;
+   cursor:pointer;
 }
 
 #topbar {
@@ -93,11 +113,11 @@ div #container {
     height: 100px;
     padding: 0 30px;
     overflow: hidden;
- 	font-family: "휴먼모음T";   
+    font-family: "휴먼모음T";
 }
 
 #topbar :hover {
-	color:#B1B1CC;
+   color:#B1B1CC;
 }
 
 #topbar ul li {
@@ -114,26 +134,26 @@ div #container {
 }
 
 #logo {
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 100px;
-	text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 100px;
+   text-align: center;
 }
 
 #menubar {
-	font-family: "Roboto";
-	margin-top: 10px;
-	color: #000000;
-	text-align: center;
+   font-family: "Roboto";
+   margin-top: 10px;
+   color: #000000;
+   text-align: center;
 }
 
 div.ad_1 {
-	clear:both; 
-	background:#fff; 
-	text-align:center; 
-	padding:10px 0 5px 0; 
-	background:#e9eaed; 
-	border-radius:10px;
+   clear:both;
+   background:#fff;
+   text-align:center;
+   padding:10px 0 5px 0;
+   background:#e9eaed;
+   border-radius:10px;
 }
 
 /* header end */

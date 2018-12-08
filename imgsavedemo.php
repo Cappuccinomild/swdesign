@@ -6,10 +6,20 @@
     $base = new Layout;
     $base->link = './style.css';
 
+    if(isset($_POST['Item'])) echo 'item';
+    if(isset($_POST['Category'])) echo 'Category';
+    if(isset($_POST['price'])) echo 'price';
+    if(isset($_POST['color'])) echo 'color';
+    if(isset($_POST['size'])) echo 'size';
+    if(isset($_POST['material'])) echo 'mat';
+    if(isset($_FILES['thumb'])) echo 'thumb';
+    if(isset($_FILES['img'])) echo 'img';
+
+
   if( !isset($_POST['Item'])   ||!isset($_POST['Category'])
     ||!isset($_POST['price'])  ||!isset($_POST['color'])
-    ||!isset($_POST['size'])    ||!isset($_POST['material'])
-    ||!isset($_FILES['img']) !isset($_FILES['thumb']) )
+    ||!isset($_POST['size'])   ||!isset($_POST['material'])
+    ||!isset($_FILES['thumb']) ||!isset($_FILES['img']) )
     {
   echo "<p>you have not entered all the required details.<br />
   Please go back and try again.</p>";
@@ -42,10 +52,10 @@
    $ext = array_pop(explode('.', $name));
 
    //썸네일
-   $therror = $_FILES['img']['error'];
-   $thname = $_FILES['img']['name'];
-   $thext = array_pop(explode('.', $name));
-   
+   $therror = $_FILES['thumb']['error'];
+   $thname = $_FILES['thumb']['name'];
+   $thext = array_pop(explode('.', $thname));
+
    // 오류 확인
    if( $error != UPLOAD_ERR_OK ) {
    	switch( $error ) {
@@ -63,18 +73,41 @@
    	exit;
    }
 
+   if( $therror != UPLOAD_ERR_OK ) {
+   	switch( $therror ) {
+   		case UPLOAD_ERR_INI_SIZE:
+   		case UPLOAD_ERR_FORM_SIZE:
+   			echo "<script>alert('파일이 너무 큽니다.');history.back();</script>";
+   			break;
+   		case UPLOAD_ERR_NO_FILE:
+   			echo "<script>alert('파일이 첨부되지 않았습니다.');history.back();</script>";
+   			break;
+   		default:
+   			echo "<script>alert('파일이 제대로 업로드되지 않았습니다.');history.back();</script>";
+
+   	}
+   	exit;
+   }
+
    // 확장자 확인
    if( !in_array($ext, $allowed_ext) ) {
-   	echo "<script>alert('허용되지 않는 확장자입니다.');history.back();</script>";
+   	echo "<script>alert('허용되지 않는 이미지 확장자입니다.');history.back();</script>";
+   	exit;
+   }
+
+   if( !in_array($thext, $allowed_ext) ) {
+   	echo "<script>alert('허용되지 않는 썸네일 확장자입니다.');history.back();</script>";
    	exit;
    }
 
    // 파일 이동
    move_uploaded_file( $_FILES['img']['tmp_name'], $imglink.".".$ext);
+   move_uploaded_file( $_FILES['img']['tmp_name'], $thumblink.".".$thext);
 
-   $place = "";
-   $place =  $GoodsID.".".$ext;
-
+   $place ="/images/";
+   $place .=  $GoodsID.".".$ext;
+   $thplace = "/images/th";
+   $thplace .=  $GoodsID.".".$thext;
 
    $db = new DBC;
 
@@ -83,7 +116,7 @@
    $link = 0;
    //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
    $db->query = "INSERT INTO item VALUES('".$GoodsID."', '".$CategoryID."', '".$ItemName."', '".$price."',
-    '".$color."','".$size."', '".$material."', '".$DesignerID."', '".$place."', '')";//이미지링크 추가해야함
+    '".$color."','".$size."', '".$material."', '".$DesignerID."', '".$place."', '".$thplace."')";//이미지링크 추가해야함
 
 
 

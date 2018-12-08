@@ -32,16 +32,6 @@
 
   $imglink = $_SERVER['DOCUMENT_ROOT'].'/images/'.$GoodsID;
 
-  $db = new DBC;
-
-  $db->DBI();
-
-  $link = 0;
-  //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-  $db->query = "INSERT INTO item VALUES('".$GoodsID."', '".$CategoryID."', '".$ItemName."', '".$price."',
-   '".$color."','".$size."', '".$material."', '".$DesignerID."')";
-
-
    // 파일 입력 설정
    $allowed_ext = array('jpg','jpeg','png','gif');
 
@@ -75,6 +65,20 @@
 
    // 파일 이동
    move_uploaded_file( $_FILES['img']['tmp_name'], $imglink.".".$ext);
+
+   $place = "";
+   $place =  $imglink.".".$ext;
+
+   $db = new DBC;
+
+   $db->DBI();
+
+   $link = 0;
+   //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+   $db->query = "INSERT INTO item VALUES('".$GoodsID."', '".$CategoryID."', '".$ItemName."', '".$price."',
+    '".$color."','".$size."', '".$material."', '".$DesignerID."', '".$place."')";//이미지링크 추가해야함
+
+
 
    //등록 여부 출력
   $db->DBQ();

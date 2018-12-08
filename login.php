@@ -33,6 +33,10 @@ $base->content = "
 
 
       <tr>
+         <td class='text-login'> 로그인 </td>
+      </tr>
+
+      <tr>
 
          <td><input type='text' name='logid' size='20' class='text-field' placeholder='아이디'/></td>
 

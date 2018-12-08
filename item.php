@@ -22,7 +22,9 @@ if($db->result){//값이 존재할 경우
 		//메인페이지에 출력한다
 		$data = $db->result->fetch_row();
 			$base->content .=
-      "출력 : ".$data[0].$data[1].$data[2].$data[3].$data[4].$data[5].$data[6].$data[7]."<br/>";
+      "<img src='".$data[7]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='200px' height='200px' />
+	  상품명 : ".$data[0]."<br/>색상 : 이부분 더 코딩해야됨<br/>사이즈 : S,M,L<br/>디자이너 : ".$data[5]."<br/>가격 : ".$data[1]." 원<br/>
+	    <img src='".$data[IMG]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='1000px' height='2500px' />";
 
 }
 

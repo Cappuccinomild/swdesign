@@ -30,6 +30,10 @@ div #container {
    margin:0 auto;
 }
 
+div .item-style {
+  float: left;
+}
+
 .text-field {
   font-size: 20px;
   width: 100%;
@@ -175,6 +179,22 @@ div #container {
 
 #menubar {
    text-align: center;
+}
+
+.item-table {
+  margin-left: auto;
+   margin-right: auto;
+}
+
+.item-text {
+  text-align: left;
+  font-weight: bold;
+   border: none;
+   border-radius: 5px;;
+   font-size: 20px;
+   color: #000000;
+   font-family: 'Poor Story', cursive;
+   margin-left: 30px;
 }
 
 div.ad_1 {

@@ -67,7 +67,8 @@
    move_uploaded_file( $_FILES['img']['tmp_name'], $imglink.".".$ext);
 
    $place = "";
-   $place =  $imglink.".".$ext;
+   $place =  $GoodsID.".".$ext;
+
 
    $db = new DBC;
 
@@ -76,7 +77,7 @@
    $link = 0;
    //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
    $db->query = "INSERT INTO item VALUES('".$GoodsID."', '".$CategoryID."', '".$ItemName."', '".$price."',
-    '".$color."','".$size."', '".$material."', '".$DesignerID."', '".$place."')";//이미지링크 추가해야함
+    '".$color."','".$size."', '".$material."', '".$DesignerID."', '".$place."', '')";//이미지링크 추가해야함
 
 
 

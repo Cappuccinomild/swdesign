@@ -29,7 +29,7 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
          <tr>
             <td><label for='Category' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>카테고리</label></td>
             <td>
-            <select id='cate'>
+            <select id='Category' name='Category' >
               <option value='Outer'>Outer</option>
               <option value='Top'>Top</option>
               <option value='Pants'>Pants</option>

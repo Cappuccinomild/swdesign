@@ -10,7 +10,7 @@ $db = new DBC;
 
 $db->DBI();
 
-$ttem_id=$_GET['item_id'];
+$item_id=$_GET['item_id'];
 
 $db->query = "select ItemName, price, color, size, material, DesignerID, IMG, thumb from item WHERE GoodsID = '".$item_id."'";
 

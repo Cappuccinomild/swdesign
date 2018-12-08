@@ -44,6 +44,7 @@ class Layout
          </ul>
       </nav>
       <div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px' /></a></div>
+      <hr />
       <nav id='menubar'>";
          $this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출
       "</nav>";
@@ -70,11 +71,11 @@ class Layout
       {
          if(strpos($_SERVER['PHP_SELF'], "login.php"))
          {
-            $this->login="<a href='./registi.php'>회원가입</a><a href='./login.php'><b style='color:#b3b2b2;'>로그인</a>";
+            $this->login="<a href='./registi.php'>회원가입</a><a href='./login.php'><b style='color:#b3b2b2;'>로그인</b></a>";
          } else
          {
             if(strpos($_SERVER['PHP_SELF'], "registi.php")){
-               $this->login="<a href='./registi.php'><b style='color:#b3b2b2;'>회원가입</a><a href='./login.php'>로그인</a>";
+               $this->login="<a href='./registi.php'><b style='color:#b3b2b2;'>회원가입</b></a><a href='./login.php'>로그인</a>";
             }
             else{
                $this->login="<a href='./registi.php'>회원가입</a><a href='./login.php'>로그인</a>";
@@ -99,7 +100,7 @@ class Layout
    // 내용을 추가
    public function LayoutContent()
    {
-      echo "<section><article>".$this->content."</article>";
+      echo "<hr /><section><article>".$this->content."</article>";
    }
 }
 ?>

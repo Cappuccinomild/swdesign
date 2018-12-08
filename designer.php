@@ -18,7 +18,6 @@ if($db->result){//값이 존재할 경우
       }
 }
 
-
 //상품 등록 페이지
 $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipart/form-data'>
 <fieldset style='width:420px; margin-left:auto; margin-right:auto;'>
@@ -30,11 +29,11 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
          <tr>
             <td><label for='Category' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>카테고리</label></td>
             <td>
-            <select id='Category' name='Category'>
-              <option value='outer'>Outer</option>
-              <option value='top'>Top</option>
-              <option value='pants'>Pants</option>
-            </select>
+            <select id='cate'>
+              <option value='Outer'>Outer</option>
+              <option value='Top'>Top</option>
+              <option value='Pants'>Pants</option>
+            </select></td>
          </tr>
          <tr>
             <td><label for='price' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>가격(원)</label></td>
@@ -52,13 +51,9 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>재질</label></td>
             <td><input type='text' id='material' name='material' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
-				 <tr>
-            <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>썸네일</label></td>
-            <td><input type='file' name='thumb' id='thumb'/></td>
-         </tr>
          <tr>
             <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>이미지</label></td>
-            <td><input type='file' name='img' id='img'/></td>
+            <td><input type='file' multiple='multiple' name='img' id='img'/></td>
          </tr>
          <tr>
             <td colspan='2'><input type='submit' value='등록' id='submit-btn'/></td>

@@ -29,32 +29,32 @@ if($num==1)
 $base->content = "
 
 <form action='".$_SERVER['PHP_SELF']."' method='post'>
-	<table style='width: 450px;background-color: #ffffff; margin-left: auto; margin-right: auto; margin-top: 50px; border-radius: 5px; padding: 20px; height: 200px;'>
+   <table style='width: 450px;background-color: #ffffff; margin-left: auto; margin-right: auto; margin-top: 50px; border-radius: 5px; padding: 20px; height: 200px;'>
 
 
-		<tr>
+      <tr>
 
-			<td><input type='text' name='logid' size='20' class='text-field' placeholder='아이디'/></td>
+         <td><input type='text' name='logid' size='20' class='text-field' placeholder='아이디'/></td>
 
-		</tr>
+      </tr>
 
-		<tr>
+      <tr>
 
-			<td><input type='password' name='logpass' size='20' class='text-field' placeholder='비밀번호'/></td>
+         <td><input type='password' name='logpass' size='20' class='text-field' placeholder='비밀번호'/></td>
 
-		</tr>
+      </tr>
 
-		<tr>
-			<td colspan='2'><input type='submit' id='login-btn' value='로그인'/><hr /></td>
-		</tr>
-		<tr>
+      <tr>
+         <td colspan='2'><input type='submit' id='login-btn' value='로그인'/><hr style='margin-top: 5px;'/></td>
+      </tr>
+      <tr>
 
-			<td><a href='./registi.php' class='sub-text'>회원가입</a> <a href='./find.php' class='sub-text'>ID/PASSWORD 찾기</a>
-			</td>
+         <td><a href='./registi.php' class='sub-text'>회원가입</a> <a href='./find.php' class='sub-text'>ID/PASSWORD 찾기</a>
+         </td>
 
-		</tr>
+      </tr>
 
-	</table>
+   </table>
 </form>
 
 ";

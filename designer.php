@@ -51,10 +51,15 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>재질</label></td>
             <td><input type='text' id='material' name='material' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
+				 <tr>
+            <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>썸네일</label></td>
+            <td><input type='file' multiple='multiple' name='thumb' id='thumb'/></td>
+         </tr>
          <tr>
             <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #545454; float: left;'>이미지</label></td>
             <td><input type='file' multiple='multiple' name='img' id='img'/></td>
          </tr>
+
          <tr>
             <td colspan='2'><input type='submit' value='등록' id='submit-btn'/></td>
          </tr>

@@ -9,7 +9,7 @@
   if( !isset($_POST['Item'])   ||!isset($_POST['Category'])
     ||!isset($_POST['price'])  ||!isset($_POST['color'])
     ||!isset($_POST['size'])    ||!isset($_POST['material'])
-    ||!isset($_FILES['img']) )
+    ||!isset($_FILES['img']) !isset($_FILES['thumb']) )
     {
   echo "<p>you have not entered all the required details.<br />
   Please go back and try again.</p>";
@@ -31,15 +31,21 @@
 
 
   $imglink = $_SERVER['DOCUMENT_ROOT'].'/images/'.$GoodsID;
-
+  $thumblink = $_SERVER['DOCUMENT_ROOT'].'/images/th'.$GoodsID;
    // 파일 입력 설정
    $allowed_ext = array('jpg','jpeg','png','gif');
 
    // 변수 정리
+   //이미지
    $error = $_FILES['img']['error'];
    $name = $_FILES['img']['name'];
    $ext = array_pop(explode('.', $name));
 
+   //썸네일
+   $therror = $_FILES['img']['error'];
+   $thname = $_FILES['img']['name'];
+   $thext = array_pop(explode('.', $name));
+   
    // 오류 확인
    if( $error != UPLOAD_ERR_OK ) {
    	switch( $error ) {

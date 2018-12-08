@@ -21,7 +21,7 @@ $db->DBQ();
 
 if($db->result){
   while($data = $db->result->fetch_row())
-  $base->content.="<a href='#'>".$data[2]." </br> <img src='/images/$data[10]'></br></a>
+  $base->content.="<a href='#'>".$data[2]." </br> <img src='/images/".$data[10]."'></br></a>
   price : ".$data[3]."</br> color : ".$data[4]." </br> size : ".$data[5]."</br> material : ".$data[6]." </br> by ".$data[9]." </br> ".$data[10]."</br></br>"; //본문을 만듦
 }
 $db->DBO();

@@ -12,7 +12,7 @@ $db->DBI();
 
 $cate_id=$_GET['cate_id'];
 
-$db->query = "select item_name, price, item_image from list WHERE cate_id = '".$cate_id."'";
+$db->query = "select GoodsID, ItemName, price, DesignerID, thumb from list WHERE cate_id = '".$cate_id."'";
 
 $db->DBQ();
 
@@ -23,8 +23,8 @@ if($db->result){//값이 존재할 경우
 		//메인페이지에 출력한다
 		while($data = $db->result->fetch_row()){//링크를 클릭하면 newbook.html로 이동
 			$base->content .=
-      "<a href = './item.html'><img src='".$data[2]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='270px' height='80px' /></a>
-      <a href = './item.html'>상품명 : ".$data[0]."<br/></a>가격 : ".$data[1]."<br/>
+      "<a href = './item.html'><img src='".$data[4]."' alt='".$data[1]."' title='".$data[1]."' id='itemimg' width='270px' height='80px' /></a>
+      <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[1]."<br/></a>디자이너 : ".$data[3]."<br/>가격 : ".$data[2]."<br/>
 			<br/>-------------------------<br/>";
 		}
 }

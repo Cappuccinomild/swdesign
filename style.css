@@ -68,14 +68,15 @@ div #container {
    padding: 8px 20px;
    text-transform: uppercase;
    text-decoration: none;
-   font-weight: bold;
    color: #333;
    font-size: 20px;
+   font-family: 'Poor Story', cursive;
 }
 
 .category-link:hover {
    color: #fff;
    background: #111;
+   font-weight: bold;
 }
 
 #submit-btn {
@@ -110,10 +111,8 @@ div #container {
 
 #topbar {
     background-color: white;
-    height: 100px;
     padding: 0 30px;
     overflow: hidden;
-    font-family: "휴먼모음T";
 }
 
 #topbar :hover {
@@ -128,22 +127,21 @@ div #container {
 
 #topbar ul li a {
     color: black;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 25px;
+    font-family: 'Poor Story', cursive;
 }
 
 #logo {
    margin-left: auto;
    margin-right: auto;
-   margin-bottom: 100px;
+   margin-top: 20px;
+   margin-bottom: 20px;
    text-align: center;
 }
 
 #menubar {
-   font-family: "Roboto";
-   margin-top: 10px;
-   color: #000000;
    text-align: center;
 }
 

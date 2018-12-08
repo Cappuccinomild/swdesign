@@ -16,7 +16,7 @@ class Layout
    public function LayoutMain()
    {
       echo "<!DOCTYPE html>\n<html lang='ko'>";
-      echo "<head>\n<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>\n<meta charset='utf-8'/>";
+      echo "<head>\n<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Do+Hyeon' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Poor+Story' rel='stylesheet'>\n<meta charset='utf-8'/>";
       echo "<title>".$this->title."</title>";
       echo $this->LayoutStyle(); // 스타일을 레이아웃에 추가.
       echo "</head>\n<body>\n<div id='container'>";
@@ -43,7 +43,7 @@ class Layout
             <li>".$this->mypage."</li>
          </ul>
       </nav>
-      <div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002'/></a></div>
+      <div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px' /></a></div>
       <nav id='menubar'>";
          $this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출
       "</nav>";

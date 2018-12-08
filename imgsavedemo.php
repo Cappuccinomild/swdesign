@@ -6,16 +6,6 @@
     $base = new Layout;
     $base->link = './style.css';
 
-    if(isset($_POST['Item'])) echo 'item';
-    if(isset($_POST['Category'])) echo 'Category';
-    if(isset($_POST['price'])) echo 'price';
-    if(isset($_POST['color'])) echo 'color';
-    if(isset($_POST['size'])) echo 'size';
-    if(isset($_POST['material'])) echo 'mat';
-    if(isset($_FILES['thumb'])) echo 'thumb';
-    if(isset($_FILES['img'])) echo 'img';
-
-
   if( !isset($_POST['Item'])   ||!isset($_POST['Category'])
     ||!isset($_POST['price'])  ||!isset($_POST['color'])
     ||!isset($_POST['size'])   ||!isset($_POST['material'])
@@ -32,13 +22,6 @@
   $color=$_POST['color'];
   $size=$_POST['size'];
   $material=$_POST['material'];
-
-  //get goodsID 아직구현안됨
-  $GoodsID = 0;
-
-
-
-
 
   $imglink = $_SERVER['DOCUMENT_ROOT'].'/images/'.$GoodsID;
   $thumblink = $_SERVER['DOCUMENT_ROOT'].'/images/th'.$GoodsID;

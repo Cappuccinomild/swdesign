@@ -32,7 +32,7 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
          </tr>
          <tr>
             <td><label for='color' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>색상</label></td>
-            <td style='float: left;'><input type='color' multiple = 'multiple' id='color' name='color' maxlength='40' size='20' /></td>
+            <td><input type='text' id='color' name='color' maxlength='40' size='20' class='designer-text-field' placeholder='예) 검정, 빨강, 네이비'/></td>
          </tr>
          <tr>
             <td><label for='size' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>사이즈</label></td>
@@ -46,7 +46,7 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             </td>
          </tr>
          <tr>
-            <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>재료</label></td>
+            <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>재질</label></td>
             <td><input type='text' id='material' name='material' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
 				 <tr>

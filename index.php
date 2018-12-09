@@ -28,10 +28,9 @@
   $db->DBO();
 
 
-  $last = ($_GET['now'] * 10) - 1 ;
+  $last = ($_GET['now'] * 10);
   $now = ($_GET['now'] * 10) - 10 ;
   $MAX = ceil($MAX/10) * 10;
-
 
   //get data
   $db = new DBC;
@@ -45,14 +44,16 @@
         //메인페이지에 출력한다
   		$base->content .="<table>";
         for($i = 0; $data = $db->result->fetch_row(); $i = $i + 1){//링크를 클릭하면 newbook.html로 이동
-
-        	if($i % 5 == 0)
+        	if($i == 0 || $i == 5)
         		$base->content .="<tr>";
+
            $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[3]."' alt='".$data[2]."' title='".$data[2]."' id='itemimg' width='270px' height='80px' /></a>
            <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[2]."</td></a>";
 
-           if($i % 5 == 4)
+           if($i == 4 || $i == 9)
              $base->content .= "</tr>";
+         	if($i == 9)
+         		break;
         }
 
         $base->content .= "</table>";

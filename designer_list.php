@@ -27,6 +27,8 @@
 
   $db->DBO();
 
+
+  $last = ($_GET['now'] * 10) - 1 ;
   $now = ($_GET['now'] * 10) - 10 ;
   $MAX = ceil($MAX/10) * 10;
 
@@ -35,7 +37,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $now, 10 " ;
+  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $now, $last " ;
                                                                                                     //by idx desc limit 0,5
   $db->DBQ();
 

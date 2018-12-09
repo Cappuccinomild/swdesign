@@ -10,7 +10,7 @@
 
   $db = new DBC;
 
-  $base->content="<p class='animated infinite bounce delay-2s'>류진호</p>";
+  $base->content="<p class='animated infinite pulse delay-2s'>류진호</p>";
   $db->DBI();
 
   //get max size
@@ -28,7 +28,7 @@
 
   $db->DBO();
 
-  $now = ($_GET['now'] * 16) - 16 ;
+  $page = ($_GET['page'] * 16) - 16 ;
   $MAX = ceil($MAX/16) * 16;
 
   //get data
@@ -36,7 +36,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, price, DesignerID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, 16 " ;
+  $db->query = "SELECT GoodsID, price, DesignerID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $page, 16 " ;
   $db->DBQ();
 
 
@@ -57,17 +57,17 @@
 
         $base->content .= "</table>";
 
-        if($_GET['now'] > 1){
-          $board_num = $_GET['now'] - 1;
-          $base->content .="<a href = './index.php?now=".$board_num."'> 이전 ";
+        if($_GET['page'] > 1){
+          $board_num = $_GET['page'] - 1;
+          $base->content .="<a href = './index.php?page=".$board_num."'> 이전 ";
 
         }
         for($board_num = 1 ; $board_num <= $MAX/16 ; $board_num = $board_num+1){
-            $base->content .="<a href = './index.php?now=".$board_num."'> ".$board_num. " ";
+            $base->content .="<a href = './index.php?page=".$board_num."'> ".$board_num. " ";
         }
-        if($_GET['now'] < $MAX/16){
-          $board_num = $_GET['now'] + 1;
-          $base->content .="<a href = './index.php?now=".$board_num."'> 다음 ";
+        if($_GET['page'] < $MAX/16){
+          $board_num = $_GET['page'] + 1;
+          $base->content .="<a href = './index.php?page=".$board_num."'> 다음 ";
         }
   }
   $base->LayoutMain();

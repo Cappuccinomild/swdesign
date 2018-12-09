@@ -29,7 +29,11 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
 <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; border-radius: 5px; height: 500px; border-top: solid; border-bottom:solid;'>
          
          <tr>
-            <td><label for='Category' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>카테고리</label></td>
+            <td><label for='Item' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>상품명</label></td>
+            <td><input type='text' id='Item' name='Item' maxlength='40' size='20' class='designer-text-field'/></td>
+         </tr>
+         <tr>
+            <td><label for='Category' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>카테고리</label></td>
             <td style='float: left;'>
             <select id='Category' name='Category'>
               <option value='outer'>Outer</option>
@@ -41,31 +45,27 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             </select></td>
          </tr>
          <tr>
-            <td><label for='Item' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>상품명</label></td>
-            <td><input type='text' id='Item' name='Item' maxlength='40' size='20' class='designer-text-field'/></td>
-         </tr>
-         <tr>
-            <td><label for='price' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>가격(원)</label></td>
+            <td><label for='price' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>가격(원)</label></td>
             <td><input type='text' id='price' name='price' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
          <tr>
-            <td><label for='color' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>색상</label></td>
+            <td><label for='color' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>색상</label></td>
             <td style='float: left;'><input type='color' multiple = 'multiple' id='color' name='color' maxlength='40' size='20' /></td>
          </tr>
          <tr>
-            <td><label for='size' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>사이즈</label></td>
+            <td><label for='size' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>사이즈</label></td>
             <td><input type='text' id='size' name='size' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
          <tr>
-            <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>재료</label></td>
+            <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>재료</label></td>
             <td><input type='text' id='material' name='material' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
 				 <tr>
-            <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>썸네일</label></td>
+            <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>썸네일</label></td>
             <td style='float: left;'><input type='file' multiple='multiple' name='thumb' id='thumb'/></td>
          </tr>
          <tr>
-            <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>이미지</label></td>
+            <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>이미지</label></td>
             <td style='float: left;'><input type='file' multiple='multiple' name='img' id='img'/></td>
          </tr>
 

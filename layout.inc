@@ -19,10 +19,10 @@ class Layout
       echo "<head>\n<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Do+Hyeon' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Poor+Story' rel='stylesheet'>\n<meta charset='utf-8'/>";
       echo "<title>".$this->title."</title>";
       echo $this->LayoutStyle(); // 스타일을 레이아웃에 추가.
-      echo "</head>\n<body>\n<div id='container'>";
+      echo "</head>\n<body>\n <fieldset style='width: 1000px; margin-left: auto; margin-right: auto; border-style: none;'><div id='container'>";
       echo   $this->LayoutHeader(); // 헤더 부분을 레이아웃에 추가
       echo   $this->LayoutContent(); // 컨텐츠 부분을 레이아웃에 추가
-      echo "</div></body>\n</html>";
+      echo "</div></fieldset></body>\n</html>";
    }
    // 스타일을 추가
    public function LayoutStyle()
@@ -43,7 +43,7 @@ class Layout
             <li>".$this->mypage."</li>
          </ul>
       </nav>
-      <div id='logo'><a href = '/'><img src='/images/logo.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px' /></a></div>
+      <div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px' /></a></div>
       <hr />
       <nav id='menubar'>";
          $this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출

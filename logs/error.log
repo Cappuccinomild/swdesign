@@ -1914,3 +1914,13 @@
 [Sat Dec 08 15:24:03.897019 2018] [core:error] [pid 21352:tid 2012] (20024)The given path is misformatted or contained invalid characters: [client ::1:56417] AH00127: Cannot map GET /images/C:/xampp/apache/images/0.jpg HTTP/1.1 to file, referer: http://localhost/
 [Sat Dec 08 15:24:03.897019 2018] [core:error] [pid 21352:tid 2040] (20024)The given path is misformatted or contained invalid characters: [client ::1:56419] AH00127: Cannot map GET /images/C:/xampp/apache/imag HTTP/1.1 to file, referer: http://localhost/
 [Sat Dec 08 15:27:01.095876 2018] [php7:crit] [pid 21352:tid 2020] [client ::1:56458] PHP Parse error:  syntax error, unexpected end of file in C:\\xampp\\apache\\index.php on line 32, referer: http://localhost/designer.php
+[Sun Dec 09 19:42:15.740045 2018] [ssl:warn] [pid 29428:tid 768] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Dec 09 19:42:15.884983 2018] [core:warn] [pid 29428:tid 768] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Dec 09 19:42:15.891842 2018] [ssl:warn] [pid 29428:tid 768] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Dec 09 19:42:15.978321 2018] [mpm_winnt:notice] [pid 29428:tid 768] AH00455: Apache/2.4.37 (Win32) OpenSSL/1.1.1 PHP/7.2.12 configured -- resuming normal operations
+[Sun Dec 09 19:42:15.978321 2018] [mpm_winnt:notice] [pid 29428:tid 768] AH00456: Apache Lounge VC15 Server built: Oct 18 2018 17:16:04
+[Sun Dec 09 19:42:15.978321 2018] [core:notice] [pid 29428:tid 768] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Sun Dec 09 19:42:15.996039 2018] [mpm_winnt:notice] [pid 29428:tid 768] AH00418: Parent: Created child process 30864
+[Sun Dec 09 19:42:19.978253 2018] [ssl:warn] [pid 30864:tid 692] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Dec 09 19:42:20.077447 2018] [ssl:warn] [pid 30864:tid 692] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Dec 09 19:42:20.140152 2018] [mpm_winnt:notice] [pid 30864:tid 692] AH00354: Child: Starting 150 worker threads.

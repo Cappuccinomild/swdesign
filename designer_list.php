@@ -13,7 +13,7 @@
   $db->DBI();
 
   //get max size
-  $db->query = "SELECT COUNT(GoodsID) FROM item";
+  $db->query = "SELECT COUNT(GoodsID) FROM item WHERE DesignerID = '".$id."' ";
 
   $db->DBQ();
 
@@ -38,7 +38,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, $last " ;
+  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $now, $last " ;
                                                                                                     //by idx desc limit 0,5
   $db->DBQ();
 
@@ -57,15 +57,15 @@
 
         if($_GET['now'] > 1){
           $board_num = $_GET['now'] - 1;
-          $base->content .="<a href = './index.php?now=".$board_num."'> 이전 ";
+          $base->content .="<a href = './designer_list.php?now=".$board_num."'> 이전 ";
 
         }
         for($board_num = 1 ; $board_num <= $MAX/10 ; $board_num = $board_num+1){
-            $base->content .="<a href = './index.php?now=".$board_num."'> ".$board_num. " ";
+            $base->content .="<a href = './designer_list.php?now=".$board_num."'> ".$board_num. " ";
         }
         if($_GET['now'] != $MAX/10){
           $board_num = $_GET['now'] + 1;
-          $base->content .="<a href = './index.php?now=".$board_num."'> 다음 ";
+          $base->content .="<a href = './designer_list.php?now=".$board_num."'> 다음 ";
         }
   }
   $base->LayoutMain();

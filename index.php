@@ -27,8 +27,6 @@
 
   $db->DBO();
 
-
-  $last = ($_GET['now'] * 10);
   $now = ($_GET['now'] * 10) - 10 ;
   $MAX = ceil($MAX/10) * 10;
 
@@ -37,7 +35,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, $last " ;
+  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, 10 " ;
   $db->DBQ();
 
   if($db->result){//값이 존재할 경우
@@ -52,7 +50,7 @@
 
            if($i == 4 || $i == 9)
              $base->content .= "</tr>";
-         
+
          	if($i == 9)
          		break;
         }

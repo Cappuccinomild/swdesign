@@ -37,7 +37,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $now, $last " ;
+  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $now, 10 " ;
                                                                                                     //by idx desc limit 0,5
   $db->DBQ();
 

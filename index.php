@@ -47,7 +47,7 @@
         	if($i == 0 || $i == 4 || $i == 8 || $i == 12)
         		$base->content .="<tr>";
 
-           $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[4]."' alt='".$data[3]."' title='".$data[3]."' id='itemimg' width='260px' height='380px' /></a><br/>
+           $base->content .="<td style='text-align: center;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[4]."' alt='".$data[3]."' title='".$data[3]."' id='itemimg' width='260px' height='380px' /></a><br/>
            <a href = './item.php?item_id=".$data[0]."'>".$data[3]."<br/></a>".$data[2]."<br/>".$data[1]."원</td>";
 
            if($i == 3 || $i == 7 || $i == 11 || $i == 15)

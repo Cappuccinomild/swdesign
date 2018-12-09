@@ -36,12 +36,12 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             <td><label for='Category' style='font-family: 휴먼모음T; font-size: 20px; color: #000000;'>카테고리</label></td>
             <td style='float: left;'>
             <select id='Category' name='Category'>
-              <option value='outer'>Outer</option>
-              <option value='top'>Top</option>
-              <option value='pants'>Pants</option>
-              <option value='skirt'>Skirt</option>
-              <option value='shoes'>Shoes</option>
-              <option value='accessory'>Accessory</option>
+              <option value='Outer'>Outer</option>
+              <option value='Top'>Top</option>
+              <option value='Pants'>Pants</option>
+              <option value='Skirt'>Skirt</option>
+              <option value='Shoes'>Shoes</option>
+              <option value='Accessory'>Accessory</option>
               <option value='etc'>etc</option>
             </select></td>
          </tr>

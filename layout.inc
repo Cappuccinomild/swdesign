@@ -51,12 +51,12 @@ class Layout
    }
    public function LayoutMenu() // 배열과 <li> 을 이용해서 메뉴 부분을 호출
    {
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>아우터</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=top'>상의</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=pants'>바지</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=skirt'>스커트</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=shoes'>신발</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=accessory'>악세사리</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Outer'>아우터</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Top'>상의</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Pants'>바지</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Skirt'>스커트</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Shoes'>신발</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Accessory'>악세사리</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=etc'>잡화</a></li>";
    }
    // 로그인을 출력할 지 로그아웃을 출력할 지 결정

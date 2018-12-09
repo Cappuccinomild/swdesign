@@ -45,13 +45,12 @@ class Layout
          </ul>
       </nav>
       <div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px; margin-bottom: 20px;' /></a></div>
-      <hr />
-      <nav id='menubar'>";
+      <hr />";
          $this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출
-      "</nav>";
    }
    public function LayoutMenu() // 배열과 <li> 을 이용해서 메뉴 부분을 호출
    {
+      echo "<nav id='menubar'>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Outer'>아우터</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Top'>상의</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Pants'>바지</a></li>";
@@ -59,6 +58,7 @@ class Layout
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Shoes'>신발</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Accessory'>악세사리</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=etc'>잡화</a></li>";
+      echo "</nav>";
    }
    // 로그인을 출력할 지 로그아웃을 출력할 지 결정
    public  function LayoutLogin()

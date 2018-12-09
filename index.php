@@ -28,17 +28,15 @@
   $db->DBO();
 
 
-  $last = ($_GET['now'] * 10) - 1 ;
   $now = ($_GET['now'] * 10) - 10 ;
   $MAX = ceil($MAX/10) * 10;
-
 
   //get data
   $db = new DBC;
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, $last " ;
+  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, 10" ;
   $db->DBQ();
 
   if($db->result){//값이 존재할 경우
@@ -48,8 +46,9 @@
 
         	if($i % 5 == 0)
         		$base->content .="<tr>";
+
            $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[3]."' alt='".$data[2]."' title='".$data[2]."' id='itemimg' width='270px' height='80px' /></a>
-           <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[2]."</td></a>";
+           <a href = './item.php?item_id=".$data[0]."'/>상품명 : ".$data[2]."</a></td>";
 
            if($i % 5 == 4)
              $base->content .= "</tr>";

@@ -10,7 +10,7 @@
 
   $db = new DBC;
 
-  $base->content="<marquee scrollamount=20>류진호 멍청이</marquee> <h2>/* NEW */</h2>";
+  $base->content="<marquee scrollamount=20>김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이</marquee> <h2>/* NEW */</h2>";
   $db->DBI();
 
   //get max size
@@ -42,7 +42,7 @@
 
   if($db->result){//값이 존재할 경우
         //메인페이지에 출력한다
-  		$base->content .="<table>";
+  		$base->content .="<table style='margin-left: auto; margin-right: auto;'>";
         for($i = 0; $data = $db->result->fetch_row(); $i = $i + 1){//링크를 클릭하면 newbook.html로 이동
         	if($i == 0 || $i == 4 || $i == 8 || $i == 12)
         		$base->content .="<tr>";

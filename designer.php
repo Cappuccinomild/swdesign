@@ -18,7 +18,7 @@ if($db->result){//값이 존재할 경우
       //메인페이지에 출력한다
       while($data = $db->result->fetch_row()){//링크를 클릭하면 newbook.html로 이동
          $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[3]."' alt='".$data[2]."' title='".$data[2]."' id='itemimg' width='270px' height='80px' /></a><br/>
-         <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[2]."</td>";
+         <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[2]."</td></a>";
       }
 }
 
@@ -40,7 +40,7 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
               <option value='pants'>Pants</option>
               <option value='skirt'>Skirt</option>
               <option value='accessory'>Accessory</option>
-              <option value='guitar'>Guitar</option>
+              <option value='etc'>etc</option>
             </select></td>
          </tr>
          <tr>

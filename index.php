@@ -10,6 +10,7 @@
 
   $db = new DBC;
 
+  $base->content="<marquee scrollamount=20>류진호 멍청이</marquee> <h2>/* NEW */</h2>";
   $db->DBI();
 
   //get max size
@@ -27,32 +28,31 @@
 
   $db->DBO();
 
-  $now = ($_GET['now'] * 10) - 10 ;
-  $MAX = ceil($MAX/10) * 10;
+  $now = ($_GET['now'] * 16) - 16 ;
+  $MAX = ceil($MAX/16) * 16;
 
   //get data
   $db = new DBC;
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, 10 " ;
+  $db->query = "SELECT GoodsID, price, DesignerID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, 16 " ;
   $db->DBQ();
+
 
   if($db->result){//값이 존재할 경우
         //메인페이지에 출력한다
   		$base->content .="<table>";
         for($i = 0; $data = $db->result->fetch_row(); $i = $i + 1){//링크를 클릭하면 newbook.html로 이동
-        	if($i == 0 || $i == 5)
+        	if($i == 0 || $i == 4 || $i == 8 || $i == 12)
         		$base->content .="<tr>";
 
-           $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[3]."' alt='".$data[2]."' title='".$data[2]."' id='itemimg' width='270px' height='80px' /></a>
-           <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[2]."</td></a>";
+           $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[4]."' alt='".$data[3]."' title='".$data[3]."' id='itemimg' width='260px' height='380px' /></a><br/>
+           <a href = './item.php?item_id=".$data[0]."'>".$data[3]."<br/></a>".$data[2]."<br/>".$data[1]."원</td>";
 
-           if($i == 4 || $i == 9)
+           if($i == 3 || $i == 7 || $i == 11 || $i == 15)
              $base->content .= "</tr>";
 
-         	if($i == 9)
-         		break;
         }
 
         $base->content .= "</table>";
@@ -62,10 +62,10 @@
           $base->content .="<a href = './index.php?now=".$board_num."'> 이전 ";
 
         }
-        for($board_num = 1 ; $board_num <= $MAX/10 ; $board_num = $board_num+1){
+        for($board_num = 1 ; $board_num <= $MAX/16 ; $board_num = $board_num+1){
             $base->content .="<a href = './index.php?now=".$board_num."'> ".$board_num. " ";
         }
-        if($_GET['now'] < $MAX/10){
+        if($_GET['now'] < $MAX/16){
           $board_num = $_GET['now'] + 1;
           $base->content .="<a href = './index.php?now=".$board_num."'> 다음 ";
         }

@@ -7,6 +7,13 @@
   $base->link = './style.css';
 
   $id = $_SESSION['id'];
+  if(isset($_GET['page'])){
+    $page=$_GET['page'];
+  }
+  else {
+    $page=1;
+  }
+
 
   $db = new DBC;
 
@@ -28,7 +35,7 @@
 
   $db->DBO();
 
-  $page = ($_GET['page'] * 16) - 16 ;
+  $firstPageNum = ($page * 16) - 16 ;
   $MAX = ceil($MAX/16) * 16;
 
   //get data
@@ -36,7 +43,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, price, DesignerID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $page, 16 " ;
+  $db->query = "SELECT GoodsID, price, DesignerID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $firstPageNum, 16 " ;
   $db->DBQ();
 
 
@@ -57,16 +64,16 @@
 
         $base->content .= "</table>";
 
-        if($_GET['page'] > 1){
-          $board_num = $_GET['page'] - 1;
+        if($page > 1){
+          $board_num = $page - 1;
           $base->content .="<a href = './index.php?page=".$board_num."'> 이전 ";
 
         }
         for($board_num = 1 ; $board_num <= $MAX/16 ; $board_num = $board_num+1){
             $base->content .="<a href = './index.php?page=".$board_num."'> ".$board_num. " ";
         }
-        if($_GET['page'] < $MAX/16){
-          $board_num = $_GET['page'] + 1;
+        if($page < $MAX/16){
+          $board_num = $page + 1;
           $base->content .="<a href = './index.php?page=".$board_num."'> 다음 ";
         }
   }

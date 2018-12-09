@@ -83,14 +83,20 @@ class Layout
       }
    }
    public function LayoutMypage(){
-      if($_SESSION['id']=="")
+      if($_SESSION['id']!="")
       {
-         $this->mypage="<a href='./login.php'>마이페이지</a>";
-         //echo "<script>alert('로그인 후 이용 가능합니다. 로그인 화면으로 이동합니다.');location.replace('./login.php');</script>";
-      }
-      else
-      {
-         $this->mypage="<a href='./".$_SESSION['regist_type'].".php'>마이페이지</a>";
+        if(strcmp($_SESSION['regist_type'],'customer')==0){
+          $this->mypage="<a href='./message.php'>메세지전송</a><a href='./message.php'>주문완료내역</a><a href='./customer.php'>피드백 진행 상품</a>";
+        }
+        else if(strcmp($_SESSION['regist_type'],'designer')==0){
+          $this->mypage="<a href='./message.php'>메세지전송</a><a href='./designer_list.php'>내 상품 목록</a><a href='./designer.php'>상품등록</a>";
+        }
+        else if(strcmp($_SESSION['regist_type'],'admin')==0){
+          $this->mypage="<a href='./".$_SESSION['regist_type'].".php'>마이페이지</a>";
+        }
+        else {
+          echo "Error!";
+        }
       }
    }
    // 내용을 추가

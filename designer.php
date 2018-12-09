@@ -5,23 +5,28 @@ $base = new Layout;
 $base->link = './style.css';
 
 $db = new DBC;
+
 $db->DBI();
+
 $id = $_SESSION['id'];
-$db->query = "SELECT title, body, CustomerID, GoodsID FROM feedback WHERE DesignerID = $id";
+
+$db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item WHERE DesignerID = '".$id."'";
+
 $db->DBQ();
+
 if($db->result){//값이 존재할 경우
       //메인페이지에 출력한다
       while($data = $db->result->fetch_row()){//링크를 클릭하면 newbook.html로 이동
-         $base->content .="<a href = './newbook.html'>
-         title : ".$data[0]."<br/>body : ".$data[1]."</a>
-         <br/>-------------------------<br/>";
+         $base->content .="<td style='margin-left: 20px; margin-right: 20px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[3]."' alt='".$data[2]."' title='".$data[2]."' id='itemimg' width='270px' height='80px' /></a><br/>
+         <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[2]."</td>";
       }
 }
 
 //상품 등록 페이지
+
 $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipart/form-data'>
    <p> 상품 등록 </p>
-   <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; border-radius: 5px; height: 500px; border-top: solid; border-bottom:solid;'>
+<table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; border-radius: 5px; height: 500px; border-top: solid; border-bottom:solid;'>
          <tr>
             <td><label for='Item' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>상품명</label></td>
             <td><input type='text' id='Item' name='Item' maxlength='40' size='20' class='designer-text-field'/></td>
@@ -30,9 +35,12 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             <td><label for='Category' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>카테고리</label></td>
             <td style='float: left;'>
             <select id='Category' name='Category'>
-              <option value='Outer'>Outer</option>
-              <option value='Top'>Top</option>
-              <option value='Pants'>Pants</option>
+              <option value='outer'>Outer</option>
+              <option value='top'>Top</option>
+              <option value='pants'>Pants</option>
+              <option value='skirt'>Skirt</option>
+              <option value='accessory'>Accessory</option>
+              <option value='guitar'>Guitar</option>
             </select></td>
          </tr>
          <tr>
@@ -68,4 +76,5 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
 $db->DBO();
 
 $base->LayoutMain();
+
 ?>

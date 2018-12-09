@@ -54,15 +54,10 @@ class Layout
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>아우터</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=top'>상의</a></li>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=pants'>바지</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>지민</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=top'>병오</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=pants'>소설</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>팀플</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=top'>데통</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=pants'>시험</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>조졌</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=top'>다리</a></li>";
-      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=pants'>ㅎㅎ</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>스커트</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=top'>신발</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=pants'>악세사리</a></li>";
+      echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=outer'>잡화</a></li>";
    }
    // 로그인을 출력할 지 로그아웃을 출력할 지 결정
    public  function LayoutLogin()

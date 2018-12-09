@@ -1924,3 +1924,25 @@
 [Sun Dec 09 19:42:19.978253 2018] [ssl:warn] [pid 30864:tid 692] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
 [Sun Dec 09 19:42:20.077447 2018] [ssl:warn] [pid 30864:tid 692] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
 [Sun Dec 09 19:42:20.140152 2018] [mpm_winnt:notice] [pid 30864:tid 692] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 10 00:36:36.262624 2018] [ssl:warn] [pid 13104:tid 804] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 10 00:36:36.433114 2018] [core:warn] [pid 13104:tid 804] AH00098: pid file C:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 10 00:36:36.446081 2018] [ssl:warn] [pid 13104:tid 804] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 10 00:36:37.167156 2018] [mpm_winnt:notice] [pid 13104:tid 804] AH00455: Apache/2.4.37 (Win32) OpenSSL/1.1.1 PHP/7.2.12 configured -- resuming normal operations
+[Mon Dec 10 00:36:37.168201 2018] [mpm_winnt:notice] [pid 13104:tid 804] AH00456: Apache Lounge VC15 Server built: Oct 18 2018 17:16:04
+[Mon Dec 10 00:36:37.168310 2018] [core:notice] [pid 13104:tid 804] AH00094: Command line: 'c:\\xampp\\apache\\bin\\httpd.exe -d C:/xampp/apache'
+[Mon Dec 10 00:36:37.192094 2018] [mpm_winnt:notice] [pid 13104:tid 804] AH00418: Parent: Created child process 19288
+[Mon Dec 10 00:36:42.146464 2018] [ssl:warn] [pid 19288:tid 200] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 10 00:36:42.306402 2018] [ssl:warn] [pid 19288:tid 200] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 10 00:36:42.397159 2018] [mpm_winnt:notice] [pid 19288:tid 200] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 10 01:25:20.938092 2018] [php7:crit] [pid 19288:tid 2036] [client ::1:53958] PHP Parse error:  syntax error, unexpected 'insertbook' (T_STRING) in C:\\xampp\\apache\\message.php on line 18
+[Mon Dec 10 01:43:45.390714 2018] [php7:error] [pid 19288:tid 1996] [client ::1:54044] PHP Fatal error:  Uncaught Error: Call to a member function DBO() on null in C:\\xampp\\apache\\message.php:32\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\apache\\message.php on line 32
+[Mon Dec 10 01:44:03.699189 2018] [php7:error] [pid 19288:tid 1996] [client ::1:54045] PHP Fatal error:  Uncaught Error: Call to a member function DBO() on null in C:\\xampp\\apache\\message.php:32\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\apache\\message.php on line 32
+[Mon Dec 10 01:44:14.303756 2018] [php7:error] [pid 19288:tid 1996] [client ::1:54046] PHP Fatal error:  Uncaught Error: Call to a member function DBO() on null in C:\\xampp\\apache\\message.php:32\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\apache\\message.php on line 32
+[Mon Dec 10 01:44:14.581818 2018] [php7:error] [pid 19288:tid 1996] [client ::1:54046] PHP Fatal error:  Uncaught Error: Call to a member function DBO() on null in C:\\xampp\\apache\\message.php:32\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\apache\\message.php on line 32
+[Mon Dec 10 01:57:08.094953 2018] [php7:error] [pid 19288:tid 1996] [client ::1:54297] PHP Fatal error:  Uncaught Error: Call to a member function fetch_row() on boolean in C:\\xampp\\apache\\send.php:31\nStack trace:\n#0 {main}\n  thrown in C:\\xampp\\apache\\send.php on line 31, referer: http://localhost/message.php
+[Mon Dec 10 02:09:20.071206 2018] [php7:crit] [pid 19288:tid 2004] [client ::1:54388] PHP Parse error:  syntax error, unexpected '$CustomerID' (T_VARIABLE) in C:\\xampp\\apache\\send.php on line 50, referer: http://localhost/message.php
+[Mon Dec 10 02:09:59.195694 2018] [php7:warn] [pid 19288:tid 2004] [client ::1:54389] PHP Warning:  Use of undefined constant CustomerID - assumed 'CustomerID' (this will throw an Error in a future version of PHP) in C:\\xampp\\apache\\send.php on line 91, referer: http://localhost/message.php
+[Mon Dec 10 02:10:06.820452 2018] [php7:warn] [pid 19288:tid 2004] [client ::1:54397] PHP Warning:  Use of undefined constant CustomerID - assumed 'CustomerID' (this will throw an Error in a future version of PHP) in C:\\xampp\\apache\\send.php on line 91, referer: http://localhost/message.php
+[Mon Dec 10 02:13:03.507025 2018] [php7:crit] [pid 19288:tid 2004] [client ::1:54432] PHP Parse error:  syntax error, unexpected 'designer' (T_STRING) in C:\\xampp\\apache\\send.php on line 28, referer: http://localhost/message.php
+[Mon Dec 10 02:14:32.614085 2018] [php7:crit] [pid 19288:tid 2004] [client ::1:54440] PHP Parse error:  syntax error, unexpected ''designer'' (T_CONSTANT_ENCAPSED_STRING) in C:\\xampp\\apache\\send.php on line 28, referer: http://localhost/message.php
+[Mon Dec 10 02:17:42.772858 2018] [php7:warn] [pid 19288:tid 2004] [client ::1:54450] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in C:\\xampp\\apache\\db.php on line 54

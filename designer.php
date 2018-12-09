@@ -21,7 +21,7 @@ if($db->result){//값이 존재할 경우
 //상품 등록 페이지
 $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipart/form-data'>
    <p> 상품 등록 </p>
-<table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; border-radius: 5px; height: 500px; border-top: solid; border-bottom:solid;'>
+   <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; border-radius: 5px; height: 500px; border-top: solid; border-bottom:solid;'>
          <tr>
             <td><label for='Item' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>상품명</label></td>
             <td><input type='text' id='Item' name='Item' maxlength='40' size='20' class='designer-text-field'/></td>

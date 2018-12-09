@@ -48,17 +48,14 @@ div .item-style {
 .text-field {
   font-size: 20px;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-family: 'Poor Story', cursive;
+  font-family: 휴먼모음T;
   color: #000000;
 }
 
 .designer-text-field {
   font-size: 20px;
   width: 100%;
-  margin-bottom: 10px;
-  font-family: 'Poor Story', cursive;
+  font-family: 휴먼모음T;
   color: #6e6e7f;
 }
 
@@ -74,14 +71,10 @@ div .item-style {
 }
 
 .text-registi {
-   font-weight: bold;
-   border: none;
-   border-radius: 5px;;
-   margin-top: 20px;
-   font-size: 20px;
-   color: #000000;
-   font-family: 'Poor Story', cursive;
-   float: left;
+  font-family: 휴먼모음T; 
+  font-size: 20px; 
+  color: #000000;
+  float: left;
 }
 
 .text-login {

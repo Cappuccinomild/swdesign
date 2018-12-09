@@ -39,10 +39,16 @@
   $CategoryID=$_POST['Category'];
   $price=intval($_POST['price']);
   $color=$_POST['color'];
-  $size=$_POST['size'];
+  $sizeArray=$_POST['size'];
   $material=$_POST['material'];
    // 파일 입력 설정
    $allowed_ext = array('jpg','jpeg','png','gif');
+
+   $size="";
+   foreach ($sizeArray as $key=>$value) {
+    $size.=$value.",";
+   }
+  $size = substr($size, 0, -1);
 
    // 변수 정리
    //이미지

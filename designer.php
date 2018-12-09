@@ -36,7 +36,14 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
          </tr>
          <tr>
             <td><label for='size' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>사이즈</label></td>
-            <td><input type='text' id='size' name='size' maxlength='40' size='20' class='designer-text-field'/></td>
+            <td style='float: left;'>
+              <input type='checkbox' name='size[]' value='XS'>XS
+              <input type='checkbox' name='size[]' value='S'>S
+              <input type='checkbox' name='size[]' value='M'>M
+              <input type='checkbox' name='size[]' value='L'>L
+              <input type='checkbox' name='size[]' value='XL'>XL
+              <input type='checkbox' name='size[]' value='XXL'>XXL
+            </td>
          </tr>
          <tr>
             <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>재료</label></td>

@@ -15,6 +15,25 @@
   Please go back and try again.</p>";
      exit;
    }
+
+   $db = new DBC;
+
+   $db->DBI();
+
+   $db->query = "SELECT MAX(GoodsID) FROM item";
+
+   $db->DBQ();
+
+   if($db->result){//값이 존재할 경우
+   		$data = $db->result->fetch_row();
+      $GoodsID=$data[0]+1;
+   }
+   else {
+       $base->content="NO!!";
+   }
+
+  $db->DBO();
+
   $DesignerID = $_SESSION['id'];
   $ItemName=$_POST['Item'];
   $CategoryID=$_POST['Category'];
@@ -22,9 +41,6 @@
   $color=$_POST['color'];
   $size=$_POST['size'];
   $material=$_POST['material'];
-
-  $imglink = $_SERVER['DOCUMENT_ROOT'].'/images/'.$GoodsID;
-  $thumblink = $_SERVER['DOCUMENT_ROOT'].'/images/th'.$GoodsID;
    // 파일 입력 설정
    $allowed_ext = array('jpg','jpeg','png','gif');
 
@@ -83,14 +99,12 @@
    	exit;
    }
 
-   // 파일 이동
-   move_uploaded_file( $_FILES['img']['tmp_name'], $imglink.".".$ext);
-   move_uploaded_file( $_FILES['img']['tmp_name'], $thumblink.".".$thext);
+   $imglink = './images/'.$GoodsID.".".$ext;
+   $thumblink = './images/th'.$GoodsID.".".$thext;
 
-   $place ="/images/";
-   $place .=  $GoodsID.".".$ext;
-   $thplace = "/images/th";
-   $thplace .=  $GoodsID.".".$thext;
+   // 파일 이동
+   move_uploaded_file( $_FILES['img']['tmp_name'], $imglink);
+   move_uploaded_file( $_FILES['thumb']['tmp_name'], $thumblink);
 
    $db = new DBC;
 
@@ -98,8 +112,8 @@
 
    $link = 0;
    //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-   $db->query = "INSERT INTO item VALUES('".$GoodsID."', '".$CategoryID."', '".$ItemName."', '".$price."',
-    '".$color."','".$size."', '".$material."', '".$DesignerID."', '".$place."', '".$thplace."')";//이미지링크 추가해야함
+   $db->query = "INSERT INTO item VALUES('$GoodsID', '$CategoryID', '$ItemName', '$price',
+    '$color','$size', '$material', '$DesignerID', '$imglink', '$thumblink')";//이미지링크 추가해야함
 
 
 

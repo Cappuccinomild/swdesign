@@ -39,7 +39,6 @@
   $db->DBI();
 
   $db->query = "SELECT GoodsID, CategoryID, ItemName, thumb FROM item ORDER BY GoodsID desc LIMIT $now, $last " ;
-                                                                                                    //by idx desc limit 0,5
   $db->DBQ();
 
   if($db->result){//값이 존재할 경우
@@ -63,7 +62,7 @@
         for($board_num = 1 ; $board_num <= $MAX/10 ; $board_num = $board_num+1){
             $base->content .="<a href = './index.php?now=".$board_num."'> ".$board_num. " ";
         }
-        if($_GET['now'] != $MAX/10){
+        if($_GET['now'] < $MAX/10){
           $board_num = $_GET['now'] + 1;
           $base->content .="<a href = './index.php?now=".$board_num."'> 다음 ";
         }

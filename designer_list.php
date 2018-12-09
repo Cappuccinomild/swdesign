@@ -32,7 +32,6 @@
   $now = ($_GET['now'] * 10) - 10 ;
   $MAX = ceil($MAX/10) * 10;
 
-
   //get data
   $db = new DBC;
 
@@ -63,7 +62,7 @@
         for($board_num = 1 ; $board_num <= $MAX/10 ; $board_num = $board_num+1){
             $base->content .="<a href = './designer_list.php?now=".$board_num."'> ".$board_num. " ";
         }
-        if($_GET['now'] != $MAX/10){
+        if($_GET['now'] < $MAX/10){
           $board_num = $_GET['now'] + 1;
           $base->content .="<a href = './designer_list.php?now=".$board_num."'> 다음 ";
         }

@@ -18,6 +18,7 @@ class Layout
       echo "<!DOCTYPE html>\n<html lang='ko'>";
       echo "<head>\n<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Do+Hyeon' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Poor+Story' rel='stylesheet'> <link href='https://fonts.googleapis.com/css?family=Sunflower:300' rel='stylesheet'>\n<meta charset='utf-8'/>";
       echo "<title>".$this->title."</title>";
+      echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>";
       echo $this->LayoutStyle(); // 스타일을 레이아웃에 추가.
       echo "</head>\n<body>\n <fieldset style='width: 73.8%; margin-left: auto; margin-right: auto; border-style: none;'><div id='container'>";
       echo   $this->LayoutHeader(); // 헤더 부분을 레이아웃에 추가

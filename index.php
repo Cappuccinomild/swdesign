@@ -10,7 +10,7 @@
 
   $db = new DBC;
 
-  $base->content="<marquee scrollamount=20>김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이      김지민 멍청이</marquee> <h2>/* NEW */</h2>";
+  $base->content="<p class='animated infinite bounce delay-2s'>류진호</p>";
   $db->DBI();
 
   //get max size

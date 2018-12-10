@@ -31,7 +31,7 @@ if($db->result){//값이 존재할 경우
 		$action="./order_process.php?item_id=".$item_id."&designer=".$data[5];
 		$base->content .="
 		<h2>세부 상품 정보</h2>
-		<form action=$action method='post'>
+		<form action=$action enctype='multipart/form-data' method='post'>
 				<table class='item-table' style='width: 400px;'>
 					<td style='border-right:1px solid gray;'><img src='".$data[7]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='120px' height='150px' style='margin-right: 50px; float:left;'/></td>
 		      <td class='item-text' width='300%;'>주문 상품명 : ".$data[0]."<br/>디자이너 : ".$data[5]."<br/>색상 : <select name='color'>";
@@ -77,7 +77,7 @@ if($db->result){//값이 존재할 경우
 
 			$base->content.="<h2>주문자 정보</h2>
 	      <div>
-	         <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; height: 500px;'>
+	         <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; height: 600px;'>
 
 	            <tr>
 
@@ -117,6 +117,11 @@ if($db->result){//값이 존재할 경우
 	               <td><textarea class='text-field' rows='10' cols='30' name='memo' placeholder='사이즈, 재료, 색상 등 디자이너님에게 원하는 요구사항을 적어주세요.\n주문 시 해당 메모로 상단의 피드백 진행 상품 탭에 게시글이 추가 되며 댓글을 통해 디자이너님과 피드백을 주고받을 수 있습니다.\nexample) 바지 총 기장을 샘플 M의 총 기장에서 5cm 줄여서 제작 가능한가요?'></textarea></td>
 
 	            </tr>
+
+							<tr>
+		             <td><label for='img' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>이미지</label></td>
+		             <td style='float: left;'><input type='file' multiple='multiple' name='img' id='img'/></td>
+		          </tr>
 
 	            <tr>
 

@@ -62,15 +62,15 @@
 
         if($page > 1){
           $board_num = $page - 1;
-          $base->content .="<a href = './index.php?page=".$board_num."'> 이전 ";
+          $base->content .="<a href = './designer_list.php?page=".$board_num."'> 이전 ";
 
         }
         for($board_num = 1 ; $board_num <= $MAX/16 ; $board_num = $board_num+1){
-            $base->content .="<a href = './index.php?page=".$board_num."'> ".$board_num. " ";
+            $base->content .="<a href = './designer_list.php?page=".$board_num."'> ".$board_num. " ";
         }
         if($page < $MAX/16){
           $board_num = $page + 1;
-          $base->content .="<a href = './index.php?page=".$board_num."'> 다음 ";
+          $base->content .="<a href = './designer_list.php?page=".$board_num."'> 다음 ";
         }
   }
   $base->LayoutMain();

@@ -124,8 +124,9 @@ else if($id == $CustomerID){
   ";
 }
 
-$db->DBO();
-
 
 $base->LayoutMain();
+
+$db->DBO();
+
 ?>

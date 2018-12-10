@@ -40,34 +40,36 @@ $body="색상: $color\n사이즈: $size\n요구사항: $memo";
 
 $allowed_ext = array('jpg','jpeg','png','gif');
 
-$error = $_FILES['img']['error'];
-$name = $_FILES['img']['name'];
-$ext = array_pop(explode('.', $name));
+if(isset($_POST['img'])){
+  echo '1';
+  $error = $_FILES['img']['error'];
+  $name = $_FILES['img']['name'];
+  $ext = array_pop(explode('.', $name));
 
-if( $error != UPLOAD_ERR_OK ) {
- switch( $error ) {
-	 case UPLOAD_ERR_INI_SIZE:
-	 case UPLOAD_ERR_FORM_SIZE:
-		 echo "<script>alert('파일이 너무 큽니다.');history.back();</script>";
-		 break;
-	 case UPLOAD_ERR_NO_FILE:
-		 echo "<script>alert('파일이 첨부되지 않았습니다.');history.back();</script>";
-		 break;
-	 default:
-		 echo "<script>alert('파일이 제대로 업로드되지 않았습니다.');history.back();</script>";
+  if( $error != UPLOAD_ERR_OK ) {
+   switch( $error ) {
+  	 case UPLOAD_ERR_INI_SIZE:
+  	 case UPLOAD_ERR_FORM_SIZE:
+  		 echo "<script>alert('파일이 너무 큽니다.');history.back();</script>";
+  		 break;
+  	 case UPLOAD_ERR_NO_FILE:
+  		 echo "<script>alert('파일이 첨부되지 않았습니다.');history.back();</script>";
+  		 break;
+  	 default:
+  		 echo "<script>alert('파일이 제대로 업로드되지 않았습니다.');history.back();</script>";
 
- }
- exit;
+   }
+   exit;
+  }
+  if( !in_array($ext, $allowed_ext) ) {
+   echo "<script>alert('허용되지 않는 이미지 확장자입니다.');history.back();</script>";
+   exit;
+  }
+
+   $imglink = "./images/".$item_id."_".$id.".".$ext;
+
+  move_uploaded_file( $_FILES['img']['tmp_name'], $imglink);
 }
-if( !in_array($ext, $allowed_ext) ) {
- echo "<script>alert('허용되지 않는 이미지 확장자입니다.');history.back();</script>";
- exit;
-}
-
- $imglink = "./images/".$item_id."_".$id.".".$ext;
-
-move_uploaded_file( $_FILES['img']['tmp_name'], $imglink);
-
 
 $db->query = "INSERT INTO feedback VALUES('".$id."', '".$designer."','".$item_id."' , 0, '".$body."', '".$imglink."' ,0)";
 

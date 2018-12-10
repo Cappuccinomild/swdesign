@@ -83,8 +83,9 @@ if($db->result){//값이 존재할 경우
 	 }
 }
 
+$base->LayoutMain();
+
 $db->DBO();
 
 
-$base->LayoutMain();
 ?>

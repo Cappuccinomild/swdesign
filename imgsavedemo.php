@@ -119,7 +119,7 @@
    $link = 0;
    //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
    $db->query = "INSERT INTO item VALUES('$GoodsID', '$CategoryID', '$ItemName', '$price',
-    '$color','$size', '$material', '$DesignerID', '$imglink', '$thumblink')";//이미지링크 추가해야함
+    '$color','$size', '$material', '$DesignerID', '$imglink', '$thumblink', '')";//이미지링크 추가해야함
 
 
 

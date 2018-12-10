@@ -189,6 +189,12 @@ div .item-style {
 #menubar {
    text-align: center;
    font-family: 'Sunflower', sans-serif;
+   border-top-style: solid;
+   border-top-width: 1px;
+   border-top-color: #e3e3e3;
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+   border-bottom-color: #e3e3e3;
 }
 
 .item-table {

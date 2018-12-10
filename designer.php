@@ -46,7 +46,7 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
             </td>
          </tr>
          <tr>
-            <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>재질</label></td>
+            <td><label for='material' style='font-family: 휴먼모음T; font-size: 20px; color: #000000; float: left;'>재료</label></td>
             <td><input type='text' id='material' name='material' maxlength='40' size='20' class='designer-text-field'/></td>
          </tr>
 				 <tr>

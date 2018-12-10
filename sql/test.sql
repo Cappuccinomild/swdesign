@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 18-12-11 04:33
+-- 생성 시간: 18-12-10 22:41
 -- 서버 버전: 10.1.37-MariaDB
 -- PHP 버전: 7.2.12
 
@@ -41,10 +41,11 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`GoodsID`, `memo`, `DesignerID`, `CustomerID`, `co_num`) VALUES
-(24, 'test2', 'ABC', '1', 0),
-(24, 'test3', 'ABC', '1', 0),
-(24, '디자이너도 할래', 'ABC', '1', 1),
-(25, '호롤롤롤로로', 'ABC', '1', 0);
+(1, '어헝헝ㅜㅜㅜ', 'designer', 'designer', 1),
+(1, '피드백\r\n', 'designer', 'customer', 0),
+(1, '이건 피드백이란거에요', 'designer', 'customer', 0),
+(1, '나도 좀 달아보자', 'designer', 'customer', 1),
+(1, '오호라 신나는구만', 'designer', 'customer', 1);
 
 -- --------------------------------------------------------
 
@@ -67,21 +68,9 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`CustomerID`, `DesignerID`, `GoodsID`, `title`, `body`, `link`, `permit`) VALUES
-('', 'ABC', 0, 'a', 'b', '0', 0),
-('', '', 0, 'hi', 'hello', '0', 0),
-('', '0', 0, 'A', 'ABC', '0', 0),
-('', '0', 0, 'a', 'b', '0', 0),
-('1', 'ABC', 0, '2', '3', '0', 0),
-('wsr', 'ABC', 0, 'a', 'b', '0', 0),
-('ww', 'ABC', 0, '1', '3', '0', 0),
-('customer', 'ABC', 0, 's', 'v', '0', 0),
-('1', 'ABC', 0, '2', '3', '0', 0),
-('90', 'ABC', 0, 'a', 'b', '0', 0),
-('1', 'ABC', 24, '0', '0', '0', 0),
-('1', 'ABC', 0, '1', '1', '0', 0),
-(NULL, 'ABC', 22, '', '', '0', 1),
-('1', 'ABC', 24, 'title', 'body', '0', 1),
-('1', 'ABC', 25, '0', '색상: #000000\n사이즈: XS\n요구사항: ', '0', 0);
+('designer', 'designer', 1, '0', '색상: 검정\n사이즈: S\n요구사항: 아래 첨부한 사진도 넣어주실 수 있나요?', './images/1_designer.jpg', 1),
+('customer', 'designer', 1, '0', '색상: 검정\n사이즈: S\n요구사항: 감사요', './images/1_customer.jpg', 1),
+('customer', 'designer', 18, '0', '색상: 블루\n사이즈: S\n요구사항: 옷이 좀 크네요. S랑 M 중간정도의 사이즈도 주문 가능한가요?', '', 0);
 
 -- --------------------------------------------------------
 
@@ -108,30 +97,24 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`GoodsID`, `CategoryID`, `ItemName`, `price`, `color`, `size`, `material`, `DesignerID`, `IMG`, `thumb`, `total_order`) VALUES
-(1, 'outer', '1', 2, '#000000', '3', '4', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(2, 'outer', '진호', 123, '#000000', '123', '11114', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(3, 'Outer', '1', 1, '#000000', '1', '11114', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(4, 'Outer', '1', 4, '#000000', '6', '7', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(5, 'Outer', '124', 134155, '#000000', '3413', '2534', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(6, 'Outer', '11', 1, '#000000', '1', '1', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(8, 'Outer', '114', 0, '#000000', 'af', 'df', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(9, 'Outer', '1', 4, '#000000', '2345', '346', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(10, 'Outer', '111', 111, '#000000', '1110', '1110191', 'ABC', '/images/.jpg', '/images/th.jpg', 0),
-(11, 'Outer', '1', 2, '#000000', '3', '5', '', '/images/.jpg', '/images/th.jpg', 0),
-(12, 'Outer', '114', 2315, '#000000', '453214', '2351451', '', '/images/.jpg', '/images/th.jpg', 0),
-(13, 'Outer', '123', 2134, '#000000', '23415', '2134', '', '/images/.jpg', '/images/th.jpg', 0),
-(14, 'Outer', '123', 123, '#000000', '123', '123', '', '/images/.jpg', '/images/th.jpg', 0),
-(15, 'Outer', 'asd', 0, '#000000', 'asdf', 'asdf', '', '/images/.jpg', '/images/th.jpg', 0),
-(16, 'Outer', '123', 1234, '#000000', '1435234', '12345', '', '/images/.jpg', '/images/th.jpg', 0),
-(17, 'Outer', '123', 135, '#000000', '1456', '2345', '', '/images/.jpg', '/images/th.jpg', 0),
-(18, 'Outer', '1234', 1234, '#000000', '1234', '243', '', '/images/.jpg', '/images/th.jpg', 0),
-(19, 'Outer', '123', 123, '#000000', '1234', '1234', '', '/images/.jpg', '/images/th.jpg', 0),
-(20, 'Outer', '1234', 1234, '#000000', '1234', '1234', '', '/images/.jpg', '/images/th.jpg', 0),
-(21, 'Outer', '31', 1234, '#000000', '125214', '1345', '', '/images/.jpg', '/images/th.jpg', 0),
-(22, 'Outer', '123', 123, '#000000', '123', '123', '', '/images/21.jpg', '/images/th21.jpg', 0),
-(23, 'Outer', '123', 123, '#000000', '123', '123', 'ABC', '/images/23.jpg', '/images/th23.jpg', 0),
-(24, 'Outer', '1234', 134, '#000000', '1234', '1234', 'ABC', './images/24.jpg', './images/th24.jpg', 0),
-(25, 'outer', 'a', 110, '#000000', 'XS,L', 'f', 'ABC', './images/25.jpg', './images/th25.jpg', 0);
+(1, 'outer', '캘거리 오버핏 패딩 (후드,숏)', 39000, '검정,빨강,네이비', 'S,M,L', '오리털', 'designer', './images/1.jpg', './images/th1.jpg', 2),
+(2, 'outer', '후드 배색 난로JP (누빔안감)', 26400, '베이지,블랙', 'S,M,L', '누빔', 'designer', './images/2.jpg', './images/th2.jpg', 0),
+(3, 'outer', '뽀글뽀글 숏무스탕', 35100, '블랙,카키', 'M,L', '뽀글이', 'designer', './images/3.jpg', './images/th3.jpg', 0),
+(4, 'outer', '도톰 후드집업JK (울20%)', 49500, '검정,네이비,챠콜', 'S,M,L', '울', 'designer', './images/4.jpg', './images/th4.jpg', 0),
+(5, 'outer', '오리지널 스트링후드T (기모)', 16700, '블랙,그린,카키,챠콜,네이비,버건디', 'S,M,L,XL', '기모', 'designer', './images/5.jpg', './images/th5.jpg', 0),
+(6, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/6.jpg', './images/th6.jpg', 0),
+(7, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/7.jpg', './images/th7.jpg', 0),
+(8, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/8.jpg', './images/th8.jpg', 0),
+(9, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/9.jpg', './images/th9.jpg', 0),
+(10, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/10.jpg', './images/th10.jpg', 0),
+(11, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/11.jpg', './images/th11.jpg', 0),
+(12, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/12.jpg', './images/th12.jpg', 0),
+(13, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/13.jpg', './images/th13.jpg', 0),
+(14, 'top', '토마토 박시MTM (기모)', 17300, '블랙,베이지', 'S,L', '기모', 'designer', './images/14.jpg', './images/th14.jpg', 0),
+(15, 'top', '아가일 라운드한니트 (7게이지3합)', 39000, '블루,베이지,브라운', 'S,M,L,XL', '니트', 'designer', './images/15.jpg', './images/th15.jpg', 0),
+(16, 'top', '아가일 라운드한니트 (7게이지3합)', 39000, '블루,베이지,브라운', 'S,M,L,XL', '니트', 'designer', './images/16.jpg', './images/th16.jpg', 0),
+(17, 'top', '아가일 라운드한니트 (7게이지3합)', 39000, '블루,베이지,브라운', 'S,M,L,XL', '니트', 'designer', './images/17.jpg', './images/th17.jpg', 0),
+(18, 'top', '아가일 라운드한니트 (7게이지3합)', 39000, '블루,베이지,브라운', 'S,M,L,XL', '니트', 'designer', './images/18.jpg', './images/th18.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -156,23 +139,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `pass`, `mail`, `regdate`, `permit`, `regist_type`, `address`, `phone`, `name`) VALUES
-('a', '*F33AE6DD04EF4C7C1D3105568E7FB7C1EE16C937', '', '2018-11-22', 1, 'customer', '', '', ''),
-('1', '*E6CC90B878B948C35E92B003C792C46C58C4AF40', '', '2018-11-30', 1, 'customer', '', '', ''),
-('design', '*E6CC90B878B948C35E92B003C792C46C58C4AF40', '', '2018-11-30', 1, 'designer', '', '', ''),
-(NULL, NULL, NULL, NULL, NULL, NULL, '', '', ''),
-(NULL, NULL, NULL, NULL, NULL, NULL, '', '', ''),
-(NULL, NULL, NULL, NULL, NULL, NULL, '', '', ''),
-(NULL, NULL, NULL, NULL, NULL, NULL, '', '', ''),
-('2', '*12033B78389744F3F39AC4CE4CCFCAD6960D8EA0', '', '2018-12-01', 1, 'customer', '???', '010-1111-1111', '?????'),
-('2', '*12033B78389744F3F39AC4CE4CCFCAD6960D8EA0', '', '2018-12-01', 1, 'designer', 'jino', '010-1234-1234', 'jino home'),
-('a', '*F33AE6DD04EF4C7C1D3105568E7FB7C1EE16C937', '', '2018-12-01', 1, 'customer', 'jino', '010-1234-1234', 'jino home'),
-('jino', '*BBDA821D54ECC11EE1428782C23BD0854D82BC4D', '', '2018-12-03', 1, 'designer', 'jino', '010-1111-1111', 'jiho home'),
-('jinno', '*C196FA05F8C6D5CEA052CC8E0239B9ED708FAF26', '', '2018-12-03', 1, 'designer', '호류진', '010-1111-1111', '진호집'),
-('jino1234', '*BBDA821D54ECC11EE1428782C23BD0854D82BC4D', '', '2018-12-03', 1, 'customer', '진호집', '010-1111-1111', '호류진'),
-('ABC', '*26307F6B5CDB40C15C247B96C131CC1E0B3FFD1B', '', '2018-12-03', 1, 'designer', '진호집', '010-1111-1111', '호류진'),
-('jimin', '*140B51DE6C6658173B1F3CD15626D2D3E1EE4281', 'jimin@travel.com', '2018-12-03', 1, 'designer', '아 휴대전화 구분자 넣어야될듯', '01014721472', '지민킴'),
-('3', '*908BE2B7EB7D7567F7FF98716850F59BA69AA9DB', '5', '2018-12-08', 1, 'customer', '7', '6', '12'),
-('rkd', '*A4B6157319038724E3560894F7F932C8886EBFCF', '', '2018-12-10', 1, 'designer', '', '', 'rkd');
+('customer', '*89C6B530AA78695E257E55D63C00A6EC9AD3E977', 'customer@gmai.com', '2018-12-10', 1, 'customer', '대구광역시 북구', '010-1010-1010', '김고객'),
+('designer', '*89C6B530AA78695E257E55D63C00A6EC9AD3E977', 'designer@naver.com', '2018-12-10', 1, 'designer', '대구광역시 중구', '010-1472-1472', '박디자인');
 
 -- --------------------------------------------------------
 
@@ -187,14 +155,6 @@ CREATE TABLE `message` (
   `title` char(255) CHARACTER SET utf8 NOT NULL,
   `body` text CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- 테이블의 덤프 데이터 `message`
---
-
-INSERT INTO `message` (`rownum`, `DesignerID`, `CustomerID`, `title`, `body`) VALUES
-(1, 'a', '1', 'b', 'c'),
-(2, 'ABC', '1', 'test', 'test');
 
 --
 -- 덤프된 테이블의 인덱스
@@ -220,13 +180,13 @@ ALTER TABLE `message`
 -- 테이블의 AUTO_INCREMENT `item`
 --
 ALTER TABLE `item`
-  MODIFY `GoodsID` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `GoodsID` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- 테이블의 AUTO_INCREMENT `message`
 --
 ALTER TABLE `message`
-  MODIFY `rownum` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `rownum` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

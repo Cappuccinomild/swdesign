@@ -26,14 +26,14 @@ $db = new DBC;
 
 $db->DBI();
 
-$db->query = "SELECT title, body FROM feedback
+$db->query = "SELECT title, body, link FROM feedback
 							WHERE CustomerID = '$CustomerID' AND DesignerID = '$DesignerID' AND GoodsID = '$GoodsID' ";
 
 $db->DBQ();
 
 if($db->result){//처음온 피드백 출력
 	 $data = $db->result->fetch_row();
-	 $base->content .= " title : ".$data[0]." <br/> body : ".$data[1]." <br/><br/>";
+	 $base->content .= " title : ".$data[0]." <br/> <img src='".$data[7]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='365px' height='450px' style='margin-right: 50px; float:left;'/> <br/> body : ".$data[1]." <br/><br/>";
 }
 else{
 	echo "no";

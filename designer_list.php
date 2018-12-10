@@ -41,7 +41,7 @@
 
   $db->DBI();
 
-  $db->query = "SELECT GoodsID, ItemName, thumb FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $firstPageNum, 16 " ;
+  $db->query = "SELECT GoodsID, ItemName, thumb, total_order FROM item WHERE DesignerID = '".$id."' ORDER BY GoodsID desc LIMIT $firstPageNum, 16 " ;
   $db->DBQ();
 
   if($db->result){//값이 존재할 경우
@@ -52,7 +52,7 @@
         		$base->content .="<tr>";
 
            $base->content .="<td style='text-align: center; padding: 10px; height: 450px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[2]."' alt='".$data[1]."' title='".$data[1]."' id='itemimg' width='261px' height='341px' /></a><br/>
-           <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[1]."</td></a>";
+           <a href = './item.php?item_id=".$data[0]."'>상품명 : ".$data[1]."</a><br/>총 주문량 : ".$data[3]."</td>";
 
            if($i == 3 || $i == 7 || $i == 11 || $i == 15)
              $base->content .= "</tr>";

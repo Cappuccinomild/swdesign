@@ -61,6 +61,8 @@ if(!$db->result)
 } else
 
 {
+	$db->query="UPDATE item SET total_order = total_order+1 WHERE GoodsID=".$item_id;
+	$db->DBQ();
 
 	echo "<script>alert('주문이 완료 되었습니다.');location.replace('/');</script>";
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 18-12-11 02:39
+-- 생성 시간: 18-12-11 04:33
 -- 서버 버전: 10.1.37-MariaDB
 -- PHP 버전: 7.2.12
 
@@ -58,7 +58,7 @@ CREATE TABLE `feedback` (
   `GoodsID` int(11) NOT NULL,
   `title` char(255) CHARACTER SET utf8 NOT NULL,
   `body` text CHARACTER SET utf8 NOT NULL,
-  `link` int(30) DEFAULT NULL,
+  `link` char(30) DEFAULT NULL,
   `permit` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -67,21 +67,21 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`CustomerID`, `DesignerID`, `GoodsID`, `title`, `body`, `link`, `permit`) VALUES
-('', 'ABC', 0, 'a', 'b', 0, 0),
-('', '', 0, 'hi', 'hello', 0, 0),
-('', '0', 0, 'A', 'ABC', 0, 0),
-('', '0', 0, 'a', 'b', 0, 0),
-('1', 'ABC', 0, '2', '3', 0, 0),
-('wsr', 'ABC', 0, 'a', 'b', 0, 0),
-('ww', 'ABC', 0, '1', '3', 0, 0),
-('customer', 'ABC', 0, 's', 'v', 0, 0),
-('1', 'ABC', 0, '2', '3', 0, 0),
-('90', 'ABC', 0, 'a', 'b', 0, 0),
-('1', 'ABC', 24, '0', '0', 0, 0),
-('1', 'ABC', 0, '1', '1', 0, 0),
-(NULL, 'ABC', 22, '', '', 0, 1),
-('1', 'ABC', 24, 'title', 'body', 0, 1),
-('1', 'ABC', 25, '0', '색상: #000000\n사이즈: XS\n요구사항: ', 0, 0);
+('', 'ABC', 0, 'a', 'b', '0', 0),
+('', '', 0, 'hi', 'hello', '0', 0),
+('', '0', 0, 'A', 'ABC', '0', 0),
+('', '0', 0, 'a', 'b', '0', 0),
+('1', 'ABC', 0, '2', '3', '0', 0),
+('wsr', 'ABC', 0, 'a', 'b', '0', 0),
+('ww', 'ABC', 0, '1', '3', '0', 0),
+('customer', 'ABC', 0, 's', 'v', '0', 0),
+('1', 'ABC', 0, '2', '3', '0', 0),
+('90', 'ABC', 0, 'a', 'b', '0', 0),
+('1', 'ABC', 24, '0', '0', '0', 0),
+('1', 'ABC', 0, '1', '1', '0', 0),
+(NULL, 'ABC', 22, '', '', '0', 1),
+('1', 'ABC', 24, 'title', 'body', '0', 1),
+('1', 'ABC', 25, '0', '색상: #000000\n사이즈: XS\n요구사항: ', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE `member` (
   `regdate` date DEFAULT NULL,
   `permit` tinyint(3) DEFAULT NULL,
   `regist_type` char(10) DEFAULT NULL,
-  `address` text CHARACTER SET utf8 NOT NULL,
+  `address` char(30) CHARACTER SET utf8 NOT NULL,
   `phone` char(13) NOT NULL,
   `name` char(20) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -174,6 +174,28 @@ INSERT INTO `member` (`id`, `pass`, `mail`, `regdate`, `permit`, `regist_type`, 
 ('3', '*908BE2B7EB7D7567F7FF98716850F59BA69AA9DB', '5', '2018-12-08', 1, 'customer', '7', '6', '12'),
 ('rkd', '*A4B6157319038724E3560894F7F932C8886EBFCF', '', '2018-12-10', 1, 'designer', '', '', 'rkd');
 
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `message`
+--
+
+CREATE TABLE `message` (
+  `rownum` int(30) NOT NULL,
+  `DesignerID` char(16) NOT NULL,
+  `CustomerID` char(16) NOT NULL,
+  `title` char(255) CHARACTER SET utf8 NOT NULL,
+  `body` text CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 테이블의 덤프 데이터 `message`
+--
+
+INSERT INTO `message` (`rownum`, `DesignerID`, `CustomerID`, `title`, `body`) VALUES
+(1, 'a', '1', 'b', 'c'),
+(2, 'ABC', '1', 'test', 'test');
+
 --
 -- 덤프된 테이블의 인덱스
 --
@@ -185,6 +207,12 @@ ALTER TABLE `item`
   ADD UNIQUE KEY `GoodsID` (`GoodsID`);
 
 --
+-- 테이블의 인덱스 `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`rownum`);
+
+--
 -- 덤프된 테이블의 AUTO_INCREMENT
 --
 
@@ -193,6 +221,12 @@ ALTER TABLE `item`
 --
 ALTER TABLE `item`
   MODIFY `GoodsID` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- 테이블의 AUTO_INCREMENT `message`
+--
+ALTER TABLE `message`
+  MODIFY `rownum` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -42,7 +42,7 @@ $db1 = new DBC;
 $db->DBI();
 $db1->DBI();
 
-$db->query = "SELECT GoodsID FROM feedback WHERE CustomerID = $id AND permit = 1 ORDER BY GoodsID desc LIMIT $firstPageNum, 16 ";
+$db->query = "SELECT GoodsID FROM feedback WHERE CustomerID = '".$id."' AND permit = 1 ORDER BY GoodsID desc LIMIT $firstPageNum, 16 ";
 
 $db->DBQ();
 
@@ -83,8 +83,6 @@ if($db->result){//값이 존재할 경우
 	 }
 }
 
-$db->DBO();
-
-
 $base->LayoutMain();
+$db->DBO();
 ?>

@@ -34,21 +34,26 @@ if($id == ""){
     if($data[0] == 'customer'){
 
       $base->content = "<form action='send.php' method='post'>
-
-      <fieldset>
-        <p style='text-align:left;'><label for='DesignerID'>DesignerID</label>
-        <input type='text' id='DesignerID' name='DesignerID'
-        maxlength='13' size='13' /></p>
-
-        <p style='text-align:left;'><label for='Title'>Title</label>
-        <input type='text' id='Title' name='Title'
-        maxlength='40' size='7' /></p>
-
-        <p style='text-align:left;'><label for='body'>내용</label></p>
-        <p style='text-align:left;'><textarea name='body' rows='10' cols='80' type='text'></textarea></p>
+      <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'>
+      <p> 쪽지 </p>
+      <table style='margin-bottom: -15px;'>
+        <tr>
+          <td style='text-align:left;'><label for='DesignerID' id='msg-table-text'>디자이너 ID</td>
+          <td><input type='text' id='DesignerID' name='DesignerID'
+          maxlength='13' size='30' class='msg-table-input'/></td>
+        </tr>
+        <tr>
+          <td style='text-align:left;'><label for='Title' id='msg-table-text'>제목</label></td>
+          <td><input type='text' id='Title' name='Title'maxlength='40' size='30' class='msg-table-input'/></td>
+        </tr>
+        <tr>
+          <td style='text-align:left;'><label for='body' id='msg-table-text'>내용</label></td>
+        </tr>
+      </table>
+        
+        <p style='text-align:left;'><textarea name='body' rows='10' cols='80' type='text' id='msg-table-input'></textarea></p>
+        <p><input type='submit' value='전송' id='submit-btn'/></p>
       </fieldset>
-
-      <p><input type='submit' value='submit' /></p>
       </form>";
 
     }

@@ -186,15 +186,24 @@ div .item-style {
    text-align: center;
 }
 
+#msg-table-text {
+   font-family: 'Sunflower', sans-serif;
+   font-weight: bold;
+}
+
+.msg-table-input {
+
+}
+
 #menubar {
    text-align: center;
    font-family: 'Sunflower', sans-serif;
    border-top-style: solid;
    border-top-width: 1px;
-   border-top-color: #e3e3e3;
+   border-top-color: #cacaca;
    border-bottom-style: solid;
    border-bottom-width: 1px;
-   border-bottom-color: #e3e3e3;
+   border-bottom-color: #cacaca;
 }
 
 .item-table {

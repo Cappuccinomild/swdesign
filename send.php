@@ -42,8 +42,7 @@ if(isset($_POST['DesignerID'])){//고객이 디자이너에게
 
    $db->DBI();
 
-   //GOODSID가 0인건 없으니까 goodsid가 0인건 쪽지로 합시다
-    $db->query = "INSERT INTO feedback VALUES('".$CustomerID."', '".$DesignerID."', 0, '".$Title."', '".$Body."', 0 ,0)";
+   $db->query = "INSERT INTO message VALUES( '', '$DesignerID','$CustomerID', '$Title', '$Body')";
 
    $db->DBQ();
 
@@ -102,8 +101,7 @@ else if( isset($_POST['CustomerID'])){//디자이너가 고객에게
 
    $db->DBI();
 
-   //GOODSID가 0인건 없으니까 goodsid가 0인건 쪽지로 합시다
-    $db->query = "INSERT INTO feedback VALUES('".$CustomerID."', '".$DesignerID."', 0, '".$Title."', '".$Body."', 0 ,0)";
+   $db->query = "INSERT INTO message VALUES( '', '$DesignerID','$CustomerID', '$Title', '$Body')";
 
    $db->DBQ();
 

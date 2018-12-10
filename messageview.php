@@ -30,49 +30,36 @@ if($id == ""){
   if($db->result){
 
     $data = $db->result->fetch_row();
+    $db->DBO();
 
     if($data[0] == 'customer'){
 
       $db->DBI();
-      $db->query = "SELECT DesignerID, title FROM feedback WHERE CustomerID = '".$id."' AND GoodsID = 0 ";
+      $db->query = "SELECT rownum, DesignerID, title FROM message WHERE CustomerID = '".$id."' ";
       $db->DBQ();
 
-      while($data = $db->result->fetch_row())
-        $base->content .= " 발신인 : ".$data[0]." 제목 : ".$data[1]." ";
+      if($db->result)
+        while($data = $db->result->fetch_row())
+          $base->content .= " 발신인 : ".$data[1]." 제목 : <a href = './messagedetail.php?num=".$data[0]."&by=c'>".$data[2]."<br/>";
 
     }
 
     else if($data[0] == 'designer'){
 
-      $base->content = "<form action='send.php' method='post'>
-      <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'>
-      <p> 쪽지 </p>
-      <table style='margin-bottom: -15px;'>
-        <tr>
-          <td style='text-align:left;'><label for='DesignerID' id='msg-table-text'> 소비자 ID</td>
-          <td><input type='text' id='CustomerID' name='CustomerID'
-          maxlength='13' size='30'/></td>
-        </tr>
-        <tr>
-          <td style='text-align:left;'><label for='Title' id='msg-table-text'>제목</label></td>
-          <td><input type='text' id='Title' name='Title'maxlength='40' size='30'/></td>
-        </tr>
-        <tr>
-          <td style='text-align:left;'><label for='body' id='msg-table-text'>내용</label></td>
-        </tr>
-      </table>
+      $db->DBI();
+      $db->query = "SELECT rownum, CustomerID, title FROM message WHERE DesignerID = '".$id."' ";
+      $db->DBQ();
 
-      <p style='text-align:left;'><textarea name='body' rows='10' cols='80' type='text'></textarea></p>
-        <p><input type='submit' value='전송' id='submit-btn'/></p>
-      </fieldset>
-      </form>";
-
-    }
-
+      if($db->result){
+        while($data = $db->result->fetch_row())
+          $base->content .= " 발신인 : ".$data[1]." 제목 : <a href = './messagedetail.php?num=".$data[0]."&by=c'>".$data[2]."<br/>";
+        }
   }
+}
 }
 
 
-$db->DBO();
 $base->LayoutMain();
+
+$db->DBO();
 ?>

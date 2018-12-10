@@ -89,7 +89,7 @@ class Layout
           $this->mypage="<a href='./messageview.php'>메세지확인</a><a href='./message.php'>메세지전송</a><a href='./customer_ordered.php'>주문완료내역</a><a href='./customer.php'>피드백 진행 상품</a>";
         }
         else if(strcmp($_SESSION['regist_type'],'designer')==0){
-          $this->mypage="<a href='./message.php'>메세지전송</a><a href='./designer_list.php'>내 상품 목록</a><a href='./designer.php'>상품등록</a>";
+          $this->mypage="<a href='./messageview.php'>메세지확인</a><a href='./message.php'>메세지전송</a><a href='./designer_list.php'>내 상품 목록</a><a href='./designer.php'>상품등록</a>";
         }
         else if(strcmp($_SESSION['regist_type'],'admin')==0){
           $this->mypage="<a href='./".$_SESSION['regist_type'].".php'>마이페이지</a>";

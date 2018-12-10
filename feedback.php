@@ -33,7 +33,7 @@ $db->DBQ();
 
 if($db->result){//처음온 피드백 출력
 	 $data = $db->result->fetch_row();
-	 $base->content .= " title : ".$data[0]." <br/> <img src='".$data[3]."' id='itemimg' width='365px' height='450px' style='margin-right: 50px; float:left;'/> <br/> body : ".$data[1]." <br/><br/>";
+	 $base->content .= "   <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'><br/><br/><img src='".$data[2]."' id='itemimg' width='365px' height='450px' style='margin-right: 50px; float:left;'/> <br/>".$data[1]." <br/></fieldset> <hr/>";
 }
 else{
 	echo "no";
@@ -99,6 +99,7 @@ if($id == $DesignerID){
     <p style='text-align:left;'><textarea name='body' rows='10' cols='80' type='text'></textarea></p>
     <p><input type='submit' value='전송' id='submit-btn'/></p>
   </fieldset>
+  <a href='./permit_change.php?CustomerID=".$CustomerID."&GoodsID=".$GoodsID."' class='buy_but' style='text-align: center; height: 35px; width:180px; font-size:28px; padding : 10px; margin-top:20px; margin-bottom:20px;display:inline-block;'>승인</a>
   </form>
 
   ";
@@ -124,9 +125,8 @@ else if($id == $CustomerID){
   ";
 }
 
-
-$base->LayoutMain();
-
 $db->DBO();
 
+
+$base->LayoutMain();
 ?>

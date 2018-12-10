@@ -61,6 +61,7 @@ $base->content .= "<form action='imgsavedemo.php' method='post' enctype='multipa
          <tr>
             <td colspan='2'><input type='submit' value='등록' id='submit-btn'/></td>
          </tr>
+         </table>
 </form>";
 
 

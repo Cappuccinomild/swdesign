@@ -33,7 +33,7 @@ $db->DBQ();
 
 if($db->result){//처음온 피드백 출력
 	 $data = $db->result->fetch_row();
-	 $base->content .= " ".$data[0]." <br/> ".$data[1]." <br/><br/>";
+	 $base->content .= " title : ".$data[0]." <br/> body : ".$data[1]." <br/><br/>";
 }
 else{
 	echo "no";
@@ -82,9 +82,7 @@ if($db->result){//값이 존재할 경우
   }
 
 }
-echo $id;
-echo "<br/>";
-echo $CustomerID;
+
 if($id == $DesignerID){
   //디자이너가 접속
   $base->content .="<form action='./addcomm.php?goodsid=".$GoodsID."&co_num=1' method='post'>

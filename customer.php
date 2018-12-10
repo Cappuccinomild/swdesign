@@ -50,7 +50,7 @@ if($db->result){//값이 존재할 경우
 	 $base->content .="<table style='margin-left: auto; margin-right: auto;'>";
 	 //메인페이지에 출력한다
 	 for($i = 0 ; $data = $db->result->fetch_row() ; $i = $i + 1){//링크를 클릭하면 newbook.html로 이동
-		 $db1->query = "SELECT ItemName, thumb FROM item WHERE GoodsID = $data[0] ";
+		 $db1->query = "SELECT ItemName, thumb, DesignerID FROM item WHERE GoodsID = $data[0] ";
 
 		 $db1->DBQ();
 
@@ -59,8 +59,8 @@ if($db->result){//값이 존재할 경우
 		 if($i == 0 || $i == 4 || $i == 8 || $i == 12)
 			 $base->content .="<tr>";
 
-			 $base->content .="<td style='text-align: center; padding: 10px; height: 450px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data1[1]."' alt='".$data1[0]."' title='".$data1[0]."' id='itemimg' width='261px' height='341px' /></a><br/>
-			 <a href = './item.php?item_id=".$data[0]."'>".$data1[0]."<br/></a></td>";
+			 $base->content .="<td style='text-align: center; padding: 10px; height: 450px;'> <a href = './feedback.php?goodsid=".$data[0]."&designerid=".$data1[2]."'><img src='".$data1[1]."' alt='".$data1[0]."' title='".$data1[0]."' id='itemimg' width='261px' height='341px' /></a><br/>
+			 <a href = './feedback.php?goodsid=".$data[0]."&designerid=".$data1[2]."'>".$data1[0]."<br/></a></td>";
 
 			 if($i == 3 || $i == 7 || $i == 11 || $i == 15)
 				 $base->content .= "</tr>";

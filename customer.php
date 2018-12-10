@@ -42,7 +42,7 @@ $db1 = new DBC;
 $db->DBI();
 $db1->DBI();
 
-$db->query = "SELECT GoodsID FROM feedback WHERE CustomerID = $id AND permit = 0 ORDER BY GoodsID desc LIMIT $firstPageNum, 16 ";
+$db->query = "SELECT GoodsID FROM feedback WHERE CustomerID = '".$id."' AND permit = 0 ORDER BY GoodsID desc LIMIT $firstPageNum, 16 ";
 
 $db->DBQ();
 

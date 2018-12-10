@@ -45,7 +45,7 @@ class Layout
             <li>".$this->mypage."</li>
          </ul>
       </nav>
-      <div id='logo'><a href = '/'><img src='/images/logo2.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px; margin-bottom: 20px;' /></a></div>";
+      <div id='logo'><a href = '/'><img src='/images/logo.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px; margin-bottom: 20px;' /></a></div>";
          $this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출
    }
    public function LayoutMenu() // 배열과 <li> 을 이용해서 메뉴 부분을 호출

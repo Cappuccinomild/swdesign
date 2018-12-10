@@ -36,18 +36,16 @@ if($id == ""){
       $base->content = "<form action='send.php' method='post'>
 
       <fieldset>
-
-        <p><label for='DesignerID'>DesignerID</label>
+        <p style='text-align:left;'><label for='DesignerID'>DesignerID</label>
         <input type='text' id='DesignerID' name='DesignerID'
         maxlength='13' size='13' /></p>
 
-        <p><label for='Title'>Title</label>
+        <p style='text-align:left;'><label for='Title'>Title</label>
         <input type='text' id='Title' name='Title'
         maxlength='40' size='7' /></p>
 
-        <p><label for='body'>Body</label>
-        <input type='text' id='body' name='body'
-        maxlength='400' size='100' /></p>
+        <p style='text-align:left;'><label for='body'>내용</label></p>
+        <p style='text-align:left;'><textarea name='body' rows='10' cols='80' type='text'></textarea></p>
       </fieldset>
 
       <p><input type='submit' value='submit' /></p>

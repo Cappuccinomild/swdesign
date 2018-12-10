@@ -167,12 +167,12 @@ div .item-style {
 #topbar ul li {
     display: inline-block;
     float: right;
-    line-height:60px;
+    margin-top: 0px;
 }
 
 #topbar ul li a {
     color: black;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold;
     margin-left: 25px;
     font-family: 'Sunflower', sans-serif;

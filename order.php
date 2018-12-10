@@ -29,10 +29,12 @@ if($db->result){//값이 존재할 경우
 		$color=explode(',' ,$data[2]);
 		$size=explode(',' ,$data[3]);
 		$action="./order_process.php?item_id=".$item_id."&designer=".$data[5];
-		$base->content .="<h2>세부 상품 정보</h2><form action=$action method='post'>
-				<table class='item-table'>
+		$base->content .="
+		<h2>세부 상품 정보</h2>
+		<form action=$action method='post'>
+				<table class='item-table' style='width: 400px;'>
 					<td style='border-right:1px solid gray;'><img src='".$data[7]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='120px' height='150px' style='margin-right: 50px; float:left;'/></td>
-		      <td class='item-text' width='800px'>주문 상품명 : ".$data[0]."<br/>디자이너 : ".$data[5]."<br/>색상 : <select name='color'>";
+		      <td class='item-text' width='300%;'>주문 상품명 : ".$data[0]."<br/>디자이너 : ".$data[5]."<br/>색상 : <select name='color'>";
 
 						foreach ($color as $value) {
 							$base->content.="<option value='".$value."'>".$value."</option>";

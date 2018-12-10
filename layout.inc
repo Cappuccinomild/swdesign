@@ -107,7 +107,7 @@ class Layout
    }
     public function LayoutFooter()
     {
-       echo "<hr style = 'border:1px solid black;'/><div class='footer-image'><img src='/images/foot_info.jpg' alt='ilsa1002입니다' title='ilsa1002' style='margin-bottom: 20px;' /></div>";
+       echo "<br/><hr style = 'border:1px solid black;'/><div class='footer-image'><img src='/images/foot_info.jpg' alt='ilsa1002입니다' title='ilsa1002' style='margin-bottom: 20px;' /></div>";
     }
 }
 ?>

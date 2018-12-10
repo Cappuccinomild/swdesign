@@ -33,7 +33,11 @@ $db->DBQ();
 
 if($db->result){//처음온 피드백 출력
 	 $data = $db->result->fetch_row();
-	 $base->content .= "   <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'><br/><br/><img src='".$data[2]."' id='itemimg' width='365px' height='450px' style='margin-right: 50px; float:left;'/> <br/>".$data[1]." <br/></fieldset> <hr/>";
+   $base->content .= "   <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'><br/>";
+   if($data[2]){
+     $base->content .= "<br/><img src='".$data[2]."' id='itemimg' width='365px' height='450px' style='margin-right: 50px; float:left;'/> ";
+   }
+	$base->content .="<br/>".$data[1]." <br/></fieldset> <hr/>";
 }
 else{
 	echo "no";

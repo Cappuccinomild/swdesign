@@ -40,7 +40,7 @@ $body="색상: $color\n사이즈: $size\n요구사항: $memo";
 
 $allowed_ext = array('jpg','jpeg','png','gif');
 
-if(isset($_FILES['img'])){
+if(isset($_POST['img'])){
   echo '1';
   $error = $_FILES['img']['error'];
   $name = $_FILES['img']['name'];

@@ -54,8 +54,8 @@
         	if($i == 0 || $i == 4 || $i == 8 || $i == 12)
         		$base->content .="<tr>";
 
-           $base->content .="<td style='text-align: center; padding: 10px; height: 450px;'> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[4]."' alt='".$data[3]."' title='".$data[3]."' id='itemimg' width='261px' height='341px' /></a><br/>
-           <a href = './item.php?item_id=".$data[0]."'>".$data[3]."<br/></a>".$data[2]."<br/><b style='color: #bc3831;'>".$data[1]."원</b></td>";
+           $base->content .="<td style='text-align: center; padding: 10px; height: 450px;' id=product-text> <a href = './item.php?item_id=".$data[0]."'><img src='".$data[4]."' alt='".$data[3]."' title='".$data[3]."' id='itemimg' width='261px' height='341px' /></a><br/>
+           <a href = './item.php?item_id=".$data[0]."'>".$data[3]."<br/></a><b style='color: #545454;'>".$data[2]."</b><br/><b style='color: #bc3831;'>".$data[1]."원</b></td>";
 
            if($i == 3 || $i == 7 || $i == 11 || $i == 15)
              $base->content .= "</tr>";

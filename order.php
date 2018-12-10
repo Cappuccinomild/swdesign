@@ -77,7 +77,7 @@ if($db->result){//값이 존재할 경우
 
 			$base->content.="<h2>주문자 정보</h2>
 	      <div>
-	         <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; height: 800px;'>
+	         <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; height: 500px;'>
 
 	            <tr>
 

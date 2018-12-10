@@ -213,6 +213,10 @@ div .item-style {
   text-align: center;
 }
 
+#product-text {
+  font-family: 'Sunflower', sans-serif;
+}
+
 .item-text {
   text-align: left;
   font-weight: bold;

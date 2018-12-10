@@ -120,6 +120,11 @@ div .item-style {
    font-weight: bold;
 }
 
+.footer-image{
+  margin:0px;
+  text-align: center;
+}
+
 #submit-btn {
    font-size: 20px;
    font-family: 'Poor Story', cursive;

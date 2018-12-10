@@ -23,6 +23,7 @@ class Layout
       echo "</head>\n<body>\n <fieldset style='width: 73.8%; margin-left: auto; margin-right: auto; border-style: none;'><div id='container'>";
       echo   $this->LayoutHeader(); // 헤더 부분을 레이아웃에 추가
       echo   $this->LayoutContent(); // 컨텐츠 부분을 레이아웃에 추가
+      echo   $this->LayoutFooter();
       echo "</div></fieldset></body>\n</html>";
    }
    // 스타일을 추가
@@ -104,5 +105,9 @@ class Layout
    {
       echo "<hr /><section><article>".$this->content."</article>";
    }
+    public function LayoutFooter()
+    {
+       echo "<hr style = 'border:1px solid black;'/><div class='footer-image'><img src='/images/foot_info.jpg' alt='ilsa1002입니다' title='ilsa1002' style='margin-bottom: 20px;' /></div>";
+    }
 }
 ?>

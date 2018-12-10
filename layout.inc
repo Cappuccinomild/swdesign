@@ -86,7 +86,7 @@ class Layout
       if($_SESSION['id']!="")
       {
         if(strcmp($_SESSION['regist_type'],'customer')==0){
-          $this->mypage="<a href='./message.php'>메세지전송</a><a href='./message.php'>주문완료내역</a><a href='./customer.php'>피드백 진행 상품</a>";
+          $this->mypage="<a href='./message.php'>메세지전송</a><a href='./customer_ordered.php'>주문완료내역</a><a href='./customer.php'>피드백 진행 상품</a>";
         }
         else if(strcmp($_SESSION['regist_type'],'designer')==0){
           $this->mypage="<a href='./message.php'>메세지전송</a><a href='./designer_list.php'>내 상품 목록</a><a href='./designer.php'>상품등록</a>";

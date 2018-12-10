@@ -38,13 +38,13 @@ $base->content = "
 
       <tr>
 
-         <td><input type='text' name='logid' size='20' class='text-field' style='padding: 10px;' placeholder='아이디'/></td>
+         <td><input type='text' name='logid' size='20' class='text-field' style='padding: 10px; width: 94%;' placeholder='아이디'/></td>
 
       </tr>
 
       <tr>
 
-         <td><input type='password' name='logpass' size='20' class='text-field'  style='padding: 10px;' placeholder='비밀번호'/></td>
+         <td><input type='password' name='logpass' size='20' class='text-field'  style='padding: 10px; width: 94%;' placeholder='비밀번호'/></td>
 
       </tr>
 

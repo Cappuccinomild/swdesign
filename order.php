@@ -22,13 +22,25 @@ $db->query = "select ItemName, price, color, size, material, DesignerID, IMG, th
 
 $db->DBQ();
 
+
 if($db->result){//값이 존재할 경우
 		//메인페이지에 출력한다
 		$data = $db->result->fetch_row();
-				$base->content .="<h2>세부 상품 정보</h2>
+		$color=explode(',' ,$data[2]);
+		$size=explode(',' ,$data[3]);
+		$base->content .="<h2>세부 상품 정보</h2>
 				<table class='item-table'>
 					<td style='border-right:1px solid gray;'><img src='".$data[7]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='120px' height='150px' style='margin-right: 50px; float:left;'/></td>
-		      <td class='item-text' width='800px'>주문 상품명 : ".$data[0]."<br/>디자이너 : ".$data[5]."<br/>색상 : 검정, 흰색, 파랑<br/>사이즈 : ".$data[3]."<br/>가격 : ".$data[1]." 원</td>
+		      <td class='item-text' width='800px'>주문 상품명 : ".$data[0]."<br/>디자이너 : ".$data[5]."<br/>색상 : <select>";
+
+						foreach ($color as $value) {
+							$base->content.="<option value='".$value."'>".$value."</option>";
+						}
+					$base->content .="</select>	<br/>사이즈 : <select>";
+						foreach ($size as $value) {
+							$base->content .="<option value='".$value."'>".$value."</option>";
+						}
+					$base->content .="</select><br/>가격 : ".$data[1]." 원</td>
 
 		        </table>
 						<br/><hr class='style-eight'/>";

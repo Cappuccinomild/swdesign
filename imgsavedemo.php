@@ -120,7 +120,7 @@
    //$db->query = "INSERT INTO item VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
    $db->query = "INSERT INTO item VALUES('$GoodsID', '$CategoryID', '$ItemName', '$price',
     '$color','$size', '$material', '$DesignerID', '$imglink', '$thumblink', '')";//이미지링크 추가해야함
-
+    //GoodsID에 확장자를 더해 저장한다.
 
 
    //등록 여부 출력

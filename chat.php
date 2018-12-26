@@ -50,7 +50,6 @@ else{
   ";
 
 
-
 $base->LayoutMain();
 $db->DBO();
 

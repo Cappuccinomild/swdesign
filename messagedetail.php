@@ -17,7 +17,7 @@ $db = new DBC;
 
 $db->DBI();
 
-if($_GET['by'] == 'd'){
+if($_GET['by'] == 'c'){
   $db->query = "SELECT DesignerID, title, body FROM message WHERE rownum = '".$num."' ";
 
   $db->DBQ();
@@ -29,7 +29,7 @@ if($_GET['by'] == 'd'){
 
       $base->content .= "<form action='message.php' method='post'>
 
-      
+
 
         <input type='hidden' id='DesignerID' name='DesignerID' value ='".$data[0]."' /></p>
 
@@ -39,7 +39,7 @@ if($_GET['by'] == 'd'){
     </form>";
   }
 }
-else if($_GET['by'] == 'c'){
+else if($_GET['by'] == 'd'){
 
   $db->query = "SELECT CustomerID, title, body FROM message WHERE rownum = '".$num."' ";
 

@@ -6,7 +6,10 @@ require_once './db.php';
 $base = new Layout;
 $base->link = './style.css';
 
+//상품 id를 변수에 저장
 $item_id=$_GET['item_id'];
+
+//id가 없으면 로그인 페이지로 이동. 있으면 변수에 저장
 if(!isset($_SESSION['id'])){
 	echo "<script>alert('로그인이 필요합니다.');location.replace('./login.php');</script>";
 }
@@ -18,17 +21,19 @@ $db = new DBC;
 
 $db->DBI();
 
+//상품 id에 해당하는 상품 정보를 읽어옴
 $db->query = "select ItemName, price, color, size, material, DesignerID, IMG, thumb from item WHERE GoodsID = '".$item_id."'";
 
 $db->DBQ();
 
 
 if($db->result){//값이 존재할 경우
-		//메인페이지에 출력한다
 		$data = $db->result->fetch_row();
-		$color=explode(',' ,$data[2]);
-		$size=explode(',' ,$data[3]);
-		$action="./order_process.php?item_id=".$item_id."&designer=".$data[5];
+		$color=explode(',' ,$data[2]); //콤마로 분리하여 배열로 저장
+		$size=explode(',' ,$data[3]); //콤마로 분리하여 배열로 저장
+		$action="./order_process.php?item_id=".$item_id."&designer=".$data[5]; //action에 해당하는 주소 링크 저장
+
+		//세부 상품 정보를 출력한다
 		$base->content .="
 		<h2>세부 상품 정보</h2>
 		<form action=$action enctype='multipart/form-data' method='post'>
@@ -36,11 +41,11 @@ if($db->result){//값이 존재할 경우
 					<td style='border-right:1px solid gray;'><img src='".$data[7]."' alt='".$data[0]."' title='".$data[0]."' id='itemimg' width='120px' height='150px' style='margin-right: 50px; float:left;'/></td>
 		      <td class='item-text' width='300%;'>주문 상품명 : ".$data[0]."<br/>디자이너 : ".$data[5]."<br/>색상 : <select name='color'>";
 
-						foreach ($color as $value) {
+						foreach ($color as $value) { //foreach문으로 배열 출력
 							$base->content.="<option value='".$value."'>".$value."</option>";
 						}
 					$base->content .="</select>	<br/>사이즈 : <select name='size'>";
-						foreach ($size as $value) {
+						foreach ($size as $value) { //foreach문으로 배열 출력
 							$base->content .="<option value='".$value."'>".$value."</option>";
 						}
 					$base->content .="</select><br/>가격 : ".$data[1]." 원</td>
@@ -51,30 +56,29 @@ if($db->result){//값이 존재할 경우
 
 
 }
-else {
+else { //에러 출력
 	echo "NO!";
 	exit(1);
 }
 
 $db->DBO();
 
-//사용자정보 입력받음
+
 $db = new DBC;
 
 $db->DBI();
 
+//id에 해당하는 정보 입력받음
 $db->query = "select address, mail, name, phone from member WHERE id = '".$id."'";
 
 $db->DBQ();
 
 
-
-//사용자 정보 입력 받음
-
 if($db->result){//값이 존재할 경우
-		//메인페이지에 출력한다
+
 		$data = $db->result->fetch_row();
 
+		//주문자의 정보 출력
 			$base->content.="<h2>주문자 정보</h2>
 	      <div>
 	         <table style='width: 60%;background-color: #ffffff; margin-left: auto; margin-right: auto; height: 600px;'>

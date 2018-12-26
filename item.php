@@ -12,6 +12,7 @@ $db->DBI();
 
 $item_id=$_GET['item_id'];
 
+//item id에 해당하는 상품들의 정보를 받아옴
 $db->query = "select ItemName, price, color, size, material, DesignerID, IMG, thumb from item WHERE GoodsID = '".$item_id."'";
 
 $db->DBQ();

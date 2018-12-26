@@ -6,12 +6,12 @@ session_start();
 class Layout
 {
    private $title="일사천리"; // 웹 페이지 제목
-//   private $menu = array('Outer'=>'outer', 'Top'=>'top', 'Pants'=>'pants'); //상단에 있는 메뉴
    public $link; // CSS 링크 태그
    public $style; // 스타일 적용
    public $content; // 메인 컨텐츠
      private $login; // 로그인이나 로그아웃을 출력
    private $mypage; //마이페이지용 변수
+
    // 레이아웃을 출력
    public function LayoutMain()
    {
@@ -23,7 +23,7 @@ class Layout
       echo "</head>\n<body>\n <fieldset style='width: 73.8%; margin-left: auto; margin-right: auto; border-style: none;'><div id='container'>";
       echo   $this->LayoutHeader(); // 헤더 부분을 레이아웃에 추가
       echo   $this->LayoutContent(); // 컨텐츠 부분을 레이아웃에 추가
-      echo   $this->LayoutFooter();
+      echo   $this->LayoutFooter(); //하단 부분을 레이아웃에 추가
       echo "</div></fieldset></body>\n</html>";
    }
    // 스타일을 추가
@@ -32,7 +32,7 @@ class Layout
       echo "<link rel='stylesheet' type='text/css' href='".$this->link."'/> ";
       echo "<style>".$this->style."</style>";
    }
-//abcd
+
    // 헤더 부분 추가
    public function LayoutHeader()
    {
@@ -46,9 +46,9 @@ class Layout
          </ul>
       </nav>
       <div id='logo'><a href = '/'><img src='/images/logo.png' alt='ilsa1002입니다' title='ilsa1002' style='width: 500px; margin-bottom: 20px;' /></a></div>";
-         $this->LayoutMenu(); // $menu 배열을 이용해서 메뉴 부분을 호출
+         $this->LayoutMenu();
    }
-   public function LayoutMenu() // 배열과 <li> 을 이용해서 메뉴 부분을 호출
+   public function LayoutMenu() // <li> 을 이용해서 메뉴 부분을 호출
    {
       echo "<nav id='menubar'>";
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=Outer'>아우터</a></li>";
@@ -60,6 +60,7 @@ class Layout
       echo "<li class='category-list'><a class='category-link' href='./cate.php?cate_id=etc'>잡화</a></li>";
       echo "</nav>";
    }
+
    // 로그인을 출력할 지 로그아웃을 출력할 지 결정
    public  function LayoutLogin()
    {
@@ -82,6 +83,8 @@ class Layout
          $this->login="<a href='./logout.php'>로그아웃</a>";
       }
    }
+
+   //regist_type에 따라 마이페이지 출력
    public function LayoutMypage(){
       if($_SESSION['id']!="")
       {
@@ -99,11 +102,14 @@ class Layout
         }
       }
    }
+
    // 내용을 추가
    public function LayoutContent()
    {
       echo "<section><article>".$this->content."</article>";
    }
+
+   //하단바 추가
     public function LayoutFooter()
     {
        echo "<br/><hr style = 'border:1px solid black;'/><div class='footer-image'><img src='/images/foot_info.jpg' alt='ilsa1002입니다' title='ilsa1002' style='margin-bottom: 20px;' /></div>";

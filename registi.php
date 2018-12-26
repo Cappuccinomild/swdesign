@@ -12,6 +12,8 @@ $base = new Layout;
 
 $base->link = './style.css';
 
+
+//회원가입 페이지 양식 출력
 $base->content = "
 
    <form action='./registo.php' method='post'>

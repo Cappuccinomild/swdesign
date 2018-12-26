@@ -33,7 +33,7 @@ else{
 }
 $db->DBO();
 
-$firstPageNum = ($page * 16) - 16 ;
+$firstPageNum = ($page * 16) - 16 ;//한 페이지에 16개씩 출력
 $MAX = ceil($MAX/16) * 16;
 
 $db = new DBC;
@@ -69,7 +69,7 @@ if($db->result){//값이 존재할 경우
 
 	 $base->content .= "</table>";
 
-	 if($page > 1){
+	 if($page > 1){//페이지 번호 출력
 		 $board_num = $page - 1;
 		 $base->content .="<a href = './customer_ordered.php?page=".$board_num."'> 이전 ";
 

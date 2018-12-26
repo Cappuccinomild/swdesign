@@ -1,5 +1,5 @@
 <?php
-
+  //디자이너가 등록한 상품 확인
   require_once './layout.inc';
   require_once './db.php';
 
@@ -47,7 +47,7 @@
   if($db->result){//값이 존재할 경우
         //메인페이지에 출력한다
         $base->content .="<table style='margin-left: auto; margin-right: auto;'>";
-        for($i = 0; $data = $db->result->fetch_row(); $i = $i + 1){//링크를 클릭하면 newbook.html로 이동
+        for($i = 0; $data = $db->result->fetch_row(); $i = $i + 1){//링크를 클릭하면 designer_feedback.php로 이동
           if($i == 0 || $i == 4 || $i == 8 || $i == 12)
         		$base->content .="<tr>";
 
@@ -59,7 +59,7 @@
         }
 
         $base->content .= "</table>";
-
+        //페이지 번호 출력
         if($page > 1){
           $board_num = $page - 1;
           $base->content .="<a href = './designer_list.php?page=".$board_num."'> 이전 ";

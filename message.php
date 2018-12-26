@@ -39,7 +39,7 @@ if($id == ""){
 
     $data = $db->result->fetch_row();
 
-    if($data[0] == 'customer'){
+    if($data[0] == 'customer'){//고객으로 로그인 했을 경우
 
       $base->content = "<form action='send.php' method='post'>
       <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'>
@@ -66,7 +66,7 @@ if($id == ""){
 
     }
 
-    else if($data[0] == 'designer'){
+    else if($data[0] == 'designer'){//디자이너로 로그인 했을 경우
 
       $base->content = "<form action='send.php' method='post'>
       <fieldset style='width: 400px; margin-left: auto; margin-right: auto; border: none;'>

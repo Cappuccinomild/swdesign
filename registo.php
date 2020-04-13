@@ -17,7 +17,7 @@ $base = new Layout;
 $base->link = './style.css';
 
 
-
+//registi에서 post로 회원가입 정보 받아옴
 $id = $_POST['id'];
 
 $pass1 = $_POST['pass1'];
@@ -36,6 +36,7 @@ $mail = $_POST['mail'];
 
 $date = date('Y-m-d');
 
+//설정되지 않은 변수가 있다면 이전 페이지로 되돌아감
 if(!isset($id) || !isset($pass1) || !isset($pass2) || !isset($mail) ||
    !isset($regist_type) || !isset($name) || !isset($phone) || !isset($address))
 {
@@ -45,13 +46,13 @@ exit;
 }
 
 
-if($pass1 == $pass2)
+if($pass1 == $pass2) //비밀번호가 동일하면 비밀번호 저장
 
 {
 
 	$pass = $pass1;
 
-} else
+} else //비밀번호가 동일하지않으면 alert하며 이전 페이지로 돌아감
 
 {
 
@@ -64,15 +65,15 @@ if($pass1 == $pass2)
 }
 
 
-
+//member에 회원정보 db 삽입
 $db->query = "insert into member values
-('".$id."', password('".$pass."'), '".$mail."', '".$date."', 1,'".$regist_type."', '".$name."', '".$phone."', '".$address."')";
+('".$id."', password('".$pass."'), '".$mail."', '".$date."', 1,'".$regist_type."', '".$address."', '".$phone."', '".$name."')";
 
 $db->DBQ();
 
 
 
-if(!$db->result)
+if(!$db->result) //쿼리가 제대로 실행되지 않았을경우
 
 {
 

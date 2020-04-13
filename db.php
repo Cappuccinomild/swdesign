@@ -49,7 +49,7 @@ class DBC
 
 	{
 
-		$this->result->free;
+		$this->result->free();
 
 		$this->db->close();
 
